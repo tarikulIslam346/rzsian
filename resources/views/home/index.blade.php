@@ -62,12 +62,14 @@
                     <p>Database</p>
                 </div>
               </a>
-              <a href="all_batch_student">
+              @if(auth()->check())
+              <a href="/user">
                 <div class="_r_rzsian_site btn btn-default btn-rounded">
                     <img src="img/rzs.png">
                     <p>Database</p>
                 </div>
               </a>
+              @endif
           </div>
         </div>
       </div>
@@ -77,6 +79,7 @@
 
 <!-- register with login -->
 <!--Modal: Login / Register Form-->
+@if(!auth()->check())
 <div class="modal fade modalLRForm" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog cascading-modal" role="document">
         <!--Content-->
@@ -194,4 +197,5 @@
         <!--/.Content-->
     </div>
 </div>
+@endif
 @endsection
