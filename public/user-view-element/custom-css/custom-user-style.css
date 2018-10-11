@@ -1,6 +1,25 @@
+/*right sidebar*/
+.right_sidebar .all-batch{
+    max-height: 300px;
+}
+
+.right_sidebar .all-batch ul>a>li{
+    padding: 5px 0 5px 20px;
+    border-bottom: 1px solid gray;
+}
+
+.right_sidebar .all-batch ul>a>li p{
+    margin-bottom: 0;
+}
+
+.right_sidebar .all-batch ul>a>li:hover{
+    background-color: #284c79;
+    color: #fff;
+}
+
 /*left sidebar*/
 .left-side-bar{
-    top: 80px;
+    top: 90px;
     box-shadow:none;
     background-color: transparent;
 }
@@ -214,7 +233,7 @@
 }
 
 .left-side-deco .card.hovercard .cardheader {
-    /*background: url("http://lorempixel.com/850/280/nature/4/");*/
+    background: url("http://lorempixel.com/850/280/nature/4/");
     background-size: cover;
     height: 135px;
 }
@@ -369,4 +388,22 @@ width: 100%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   border: 5px solid rgba(0,0,30,0.8);
+}
+
+/*student information show*/
+
+#modalLoginAvatar .modal-header button{
+    position: absolute;
+    right: 20px;
+}
+#modalLoginAvatar .modal-header img{
+    border: 1px solid rgba(0,0,30,0.8);
+    height: 100px;
+    margin: auto;
+}
+#modalLoginAvatar .modal-content{
+    /*max-width: 250px;*/
+}
+#modalLoginAvatar .modal-body p{
+    margin-bottom: 0px;
 }

@@ -113,80 +113,124 @@
 							        <!--Content-->
 							        <div class="modal-content">
 							            <!--Header-->
-							            <div class="modal-header">
+							            <div class="modal-header d-flex">
 							            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							                    <span aria-hidden="true">&times;</span>
 							                </button>
-							                <img src="img/imran.jpg" alt="avatar" class="rounded-circle img-responsive" style="border: 1px solid rgba(0,0,30,0.8);">
+											<img src="img/imran.jpg" alt="avatar" class="rounded-circle img-responsive">
 							            </div>
 							            <!--Body-->
 							            <div class="modal-body text-center mb-1">
-							                <h5 class="mt-1 mb-2">Mohammad Imran</h5>
-							                <p class="mt-1 mb-2">01723535363</p>
-							                <p class="mt-1 mb-2">intoiit bangladesh LTD</p>
-							                <p class="mt-1 mb-2">Dhaka, Mirpur</p>
-							                <p class="mt-1 mb-2">B+</p>
+							                <h5>Mohammad Imran</h5>
+							                <p>01723535363</p>
+							                <p>intoiit bangladesh LTD</p>
+							                <p>Dhaka, Mirpur</p>
+							                <p>B+</p>
 							            </div>
 							      	 </div>
 							    	</div>
 								</div>
 							</div>
-
 						</div>
-					<div class="col-md-3 mx-h-380" style="box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.4)">
-						<div class="mx-h-350 customscroll">
-							<ul>
-								<a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a>
-								<a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a><a href="#">
-									<li>
-										<h4>Batch: 2007</span></h3>
-									</li>
-								</a>
-							</ul>
+					<div class="col-md-3" style="box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.4);padding: 0px">
+						<div class="right_sidebar">
+							<div class="customscroll all-batch">
+								<ul>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+									<a href="#">
+										<li>
+											<p>Batch: 2007</p>
+										</li>
+									</a>
+								</ul>
+							</div>
+						</div>
+						<div class="mx-h-350" style="margin-top:40px;background-color: #000 ">
+							<a href=""><img src="img/add.jpg" style="width: 100%"></a>
 						</div>
 					</div>
 				</div>

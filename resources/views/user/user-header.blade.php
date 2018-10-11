@@ -8,7 +8,6 @@
 				<span></span>
 				<span></span>
 			</div>
-
 					          	
 			<div class="user-info-dropdown">
 				<div class="dropdown">
@@ -23,27 +22,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="user-notification">
-				<div class="dropdown">
-					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
-						<i class="fa fa-bell" aria-hidden="true"></i>
-						<span class="badge notification-active"></span>
-					</a>
-					<div class="dropdown-menu dropdown-menu-right">
-						<div class="notification-list mx-h-350 customscroll">
-							<ul>
-								<li>
-									<a href="#">
-										<img src="user/images/img.jpg" alt="">
-										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> -->
 			<div class="user-notification">
 
 				<form id="user_menu_search">
