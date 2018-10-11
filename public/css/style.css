@@ -2,6 +2,20 @@
     /*background-image: url("../img/background.jpg");*/
 }
 
+#_r_rzsian_home ._r_nav_wrap{
+    padding:20px 20px 0;
+}
+
+#_r_rzsian_home ._r_nav_wrap a{
+    color: #000;
+    font-weight: 500;
+}
+
+#_r_rzsian_home ._r_nav_wrap img{
+    height: 45px;
+    border-radius: 50%;
+}
+
 
 ._r_rzsian_sitelogo_wrap ._r_rzsian_sitelogo img{
 

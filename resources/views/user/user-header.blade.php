@@ -1,11 +1,7 @@
 	<div class="pre-loader"></div>
 	<div class="header clearfix">
 		<div class="header-right">
-			<div class="brand-logo">
-				<a href="index.php">
-					<img src="user-view-element/images/logo.png" alt="" class="mobile-logo">
-				</a>
-			</div>
+
 			<div class="menu-icon">
 				<span></span>
 				<span></span>
@@ -21,14 +17,13 @@
 						<span class="user-name">{{\Auth::user()->name}}</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a class="dropdown-item" href="profile.php"><i class="fa fa-user-md" aria-hidden="true"></i> Profile</a>
 						<a class="dropdown-item" href="profile.php"><i class="fa fa-cog" aria-hidden="true"></i> Setting</a>
 						<a class="dropdown-item" href="faq.php"><i class="fa fa-question" aria-hidden="true"></i> Help</a>
 						<a class="dropdown-item" href="/logout_user"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
 					</div>
 				</div>
 			</div>
-			<div class="user-notification">
+			<!-- <div class="user-notification">
 				<div class="dropdown">
 					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
 						<i class="fa fa-bell" aria-hidden="true"></i>
@@ -48,9 +43,12 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="user-notification">
-				<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+				<form id="user_menu_search">
+					<input type="search" placeholder="Search">
+				</form>
 			</div>
 		</div>
 	</div>

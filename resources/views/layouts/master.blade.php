@@ -17,6 +17,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- <link href="css/style-dashboard.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -26,6 +27,7 @@
 
 
   <!-- SCRIPTS -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script> -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->

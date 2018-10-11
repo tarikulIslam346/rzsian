@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('content')
   <!-- Start your project here-->
-
-
   <section id="_r_rzsian_home">
   @if(session('registration'))
         <div class="alert  alert-success fade show" role="alert">
@@ -13,69 +11,77 @@
         </div>
     @endif 
     @if(count($errors))
-        <div class="form-group">
-                    
-                        @foreach($errors->all() as $error)
-                            <div class="alert  alert-danger fade show" role="alert">
-                              {{ $error }}
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                        @endforeach
+        <div class="form-group">    
+          @foreach($errors->all() as $error)
+              <div class="alert  alert-danger fade show" role="alert">
+                {{ $error }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+          @endforeach
         </div>
     @endif 
-    <div class="container-fluid">
-      <div class="row justify-content-md-center">
-      <div class="col-md-12">
-        <div class="_r_rzsian_sitelogo_wrap">
-          <div class="_r_rzsian_sitelogo">
-            <img src="img/main_logo.png">
+          <div class="container-fluid">
+            <div class="row justify-content-md-center">
+        
+                @if(auth()->check())
+                <div class="col-md-12">
+                  <div class="_r_nav_wrap">
+                  <!--Navbar -->
+                      <div class="container">
+                        <nav class="navbar-expand-lg">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                              <ul class="navbar-nav ml-auto">
+                                  <li class="nav-item active">
+                                      <a class="nav-link" href="/user" target="_blank"><i class="fa fa-envelope"></i> Me <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile </a>
+                                      <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                                          <a class="dropdown-item" href="#">My account</a>
+                                          <a class="dropdown-item" href="#">Log out</a>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="_r_rzsian_sitelogo_wrap">
+                    <div class="_r_rzsian_sitelogo">
+                      <img src="img/main_logo.png">
+                    </div>
+                  </div>
+                </div>
+                @else
+                <div class="col-md-12">
+                  <div class="_r_rzsian_sitelogo_wrap">
+                    <div class="_r_rzsian_sitelogo">
+                      <img src="img/main_logo.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="_r_rzsian_allsite_wrap">
+                  <div class="_r_rzsian_allsite">
+                       <a href="" data-toggle="modal" data-target=".modalLRForm">
+                          <div class="_r_rzsian_site btn btn-default btn-rounded">
+                              <img src="img/rzs.png">
+                              <p>Login please</p>
+                          </div>
+                        </a>
+                  </div>
+                </div>
+                @endif
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="_r_rzsian_sitetitle_wrap">
-          <div class="_r_rzsian_sitetitle">
-            <h3>We are rzsians family</h3>
           </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="_r_rzsian_allsite_wrap">
-          <div class="_r_rzsian_allsite">
-              <a href="" data-toggle="modal" data-target=".modalLRForm">
-                <div class="_r_rzsian_site btn btn-default btn-rounded">
-                    <img src="img/rzs.png">
-                    <p>Database</p>
-                </div>
-              </a>
-              <a href="" data-toggle="modal" data-target=".modalLRForm">
-                <div class="_r_rzsian_site btn btn-default btn-rounded">
-                    <img src="img/rzs.png">
-                    <p>Database</p>
-                </div>
-              </a>
-              <a href="" data-toggle="modal" data-target=".modalLRForm">
-                <div class="_r_rzsian_site btn btn-default btn-rounded">
-                    <img src="img/rzs.png">
-                    <p>Database</p>
-                </div>
-              </a>
-              @if(auth()->check())
-              <a href="/user">
-                <div class="_r_rzsian_site btn btn-default btn-rounded">
-                    <img src="img/rzs.png">
-                    <p>Database</p>
-                </div>
-              </a>
-              @endif
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
+        </section>
 
 <!-- register with login -->
 <!--Modal: Login / Register Form-->
@@ -177,7 +183,7 @@
                             <div class="text-center form-sm mt-2">
                                 <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
                             </div>
-                            </form>
+                          </form>
                      
                         </div>
                         <!--Footer-->

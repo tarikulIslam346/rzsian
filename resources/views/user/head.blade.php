@@ -1,6 +1,6 @@
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Dashboard</title>
+	<title>rzsian</title>
 
 	<!-- Site favicon -->
 	<!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" href="user-view-element/styles/style.css">
-	<link rel="stylesheet" href="user-view-element/styles/style-own.css">
+	<link rel="stylesheet" href="user-view-element/custom-css/custom-user-style.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
