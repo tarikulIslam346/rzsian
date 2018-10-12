@@ -1,3 +1,54 @@
+/*inherit*/
+
+.btn.btn-sm{
+    padding: 0.5rem;
+}
+
+.left-side-bar {
+  position: fixed;
+  /*left: 0;*/
+  /*top: 0;*/
+  /*width: 250px;*/
+  /*height: 100vh;*/
+  z-index: 1000;
+  /*background: #ffffff;*/
+  /*-webkit-box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.4);*/
+  /*box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.4);*/
+  /*-webkit-transition: all 0.5s ease;*/
+  transition: all 0.5s ease;
+}
+
+.left-side-bar.open {
+  left: 0; }
+
+  @media (max-width: 1200px) {
+ 
+  .left-side-bar {
+    left: -251px; }
+  .left-side-bar:before {
+    display: block;
+    opacity: 0;
+    visibility: hidden; }
+  .left-side-bar.open:before {
+    opacity: 1;
+    visibility: visible;
+    display: none; } }
+
+
+
+/*body*/
+.container-wrap {
+    padding: 90px 0px 0px 0px;
+    height: 100vh;
+}
+
+.container-wrap ._r_left_side{
+    padding: 0px;
+}
+
+
+
+
 /*right sidebar*/
 .right_sidebar .all-batch{
     max-height: 300px;
@@ -6,6 +57,7 @@
 .right_sidebar .all-batch ul>a>li{
     padding: 5px 0 5px 20px;
     border-bottom: 1px solid gray;
+    margin-left: 10px;
 }
 
 .right_sidebar .all-batch ul>a>li p{
@@ -41,7 +93,7 @@
 
 .left-side-deco .card {
     padding-top: 20px;
-    margin: 10px 0 20px 0;
+    /*margin: 10px 0 20px 0;*/
     background-color: rgba(214, 224, 226, 0.2);
     border-top-width: 0;
     border-bottom-width: 2px;
@@ -233,7 +285,7 @@
 }
 
 .left-side-deco .card.hovercard .cardheader {
-    background: url("http://lorempixel.com/850/280/nature/4/");
+    /*background: url("http://lorempixel.com/850/280/nature/4/");*/
     background-size: cover;
     height: 135px;
 }
@@ -345,7 +397,7 @@ width: 100%;
     /*margin-top: 20px;*/
 }
 
-.user_body_wrap .col-md-3{
+.user_body_wrap .col-md-4{
     margin-bottom: 30px;
 }
 
@@ -392,14 +444,16 @@ width: 100%;
 
 /*student information show*/
 
-#modalLoginAvatar .modal-header button{
+#modalLoginAvatar .modal-header button,
+#login-modal .modal-header button{
     position: absolute;
     right: 20px;
 }
+
 #modalLoginAvatar .modal-header img{
-    border: 1px solid rgba(0,0,30,0.8);
-    height: 100px;
-    margin: auto;
+    /*border: 1px solid rgba(0,0,30,0.8);*/
+    /*height: 100px;*/
+    /*margin: auto;*/
 }
 #modalLoginAvatar .modal-content{
     /*max-width: 250px;*/

@@ -5,9 +5,12 @@
 </head>
 <body>
 	@include('user.user-header')
-	@include('user.user-sidebar')
+	
 
-	<div class="main-container">
+	<div class="container">
+		<div class="container-wrap">
+	
+
 	 @if(session('user_update'))
         <div class="alert  alert-success fade show" role="alert">
            {{ session('user_update') }} 
@@ -16,12 +19,15 @@
           </button>
         </div>                   
        @endif  
-		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
-			<div class="min-height-200px">
+		<div>
+			<!-- <div class="min-height-200px"> -->
 				<div class="row clearfix">
-					<div class="col-lg-9 col-md-9">
+					<div class="col-md-2 _r_left_side">
+						@include('user.user-sidebar')
+					</div>
+					<div class="col-lg-7 col-md-7">
 						<div class="row clearfix user_body_wrap">
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -35,7 +41,7 @@
 					                </div>
 					            </div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -49,7 +55,7 @@
 					                </div>
 					            </div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -63,7 +69,7 @@
 					                </div>
 					            </div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -77,7 +83,7 @@
 					                </div>
 					            </div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -91,7 +97,7 @@
 					                </div>
 					            </div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
@@ -234,10 +240,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 			@include('user.footer')
 		</div>
+		</div>
 	</div>
-	@include('user.script')
+
 </body>
 </html>
