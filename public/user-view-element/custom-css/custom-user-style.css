@@ -54,10 +54,14 @@
     max-height: 300px;
 }
 
+.right_sidebar .all-batch ul{
+    list-style: none;
+}
+
 .right_sidebar .all-batch ul>a>li{
     padding: 5px 0 5px 20px;
     border-bottom: 1px solid gray;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
 .right_sidebar .all-batch ul>a>li p{
