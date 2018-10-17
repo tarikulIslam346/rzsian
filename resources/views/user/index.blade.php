@@ -138,13 +138,13 @@
 								</div>
 							</div>
 						</div>
-					<div class="col-md-3" style="box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.4);padding: 0px">
-						<div class="right_sidebar" style="overflow-y: scroll; height: 300px">
+					<div class="col-md-3">
+						<div class="right_sidebar">
 							<div class="all-batch">
 								<div class="card">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-  	<ul>
+								  <div class="card-header" style="background-color: #3f51b5;color:#fff">See Other Batch</div>
+								  <div class="card-body" style="overflow-y: scroll; height: 250px">
+								  	<ul>
 									<a href="#">
 										<li>
 											<p>Batch: 2007</p>
@@ -236,9 +236,8 @@
 										</li>
 									</a>
 								</ul>
-  </div>
-  <div class="card-footer">Footer</div>
-</div>
+							  </div>
+							</div>
 								
 							</div>
 						</div>

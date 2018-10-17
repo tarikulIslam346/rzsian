@@ -1,7 +1,8 @@
 
 <div class="pre-loader"></div>
-	
+
 <nav class="mb-1 navbar navbar-expand-lg fixed-top  navbar-dark default-color">
+  <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,10 +23,11 @@
           <li class="nav-item dropdown has-mega-menu" style="position:static;">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Program</a>
 
-              <div class="dropdown-menu" style="width:100%">
-                  <div class="px-0 container">
+              <div class="dropdown-menu _rzs_megaMenu_back" style="width:100%">
+                  <div class="px-0 container ">
                       <div class="row">
                           <div class="col-md-3">
+                            <h1>Eid Fst</h1>
                               <a class="dropdown-item" href="#">Action</a>
                               <a class="dropdown-item" href="#">Another action</a>
                               <a class="dropdown-item" href="#">Something else here</a>
@@ -34,6 +36,7 @@
                               <a class="dropdown-item" href="#">Another action</a>
                           </div>
                           <div class="col-md-3">
+                            <h1>Cricket Fst</h1>
                               <a class="dropdown-item" href="#">Something else here</a>
                               <a class="dropdown-item" href="#">Or a link</a>
                               <a class="dropdown-item" href="#">Action</a>
@@ -50,14 +53,14 @@
                                   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img class="d-block w-100" src="img/index.jpeg" alt="First slide" style="height: 200px">
+                                  <div class="carousel-item active" style="border: 2px solid;">
+                                    <img class="d-block w-100" src="img/index.jpeg" alt="First slide" style="height: 250px">
                                   </div>
-                                  <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/index1.jpeg" alt="Second slide" style="height: 200px">
+                                  <div class="carousel-item" style="border: 2px solid;">
+                                    <img class="d-block w-100" src="img/index1.jpeg" alt="Second slide" style="height: 250px">
                                   </div>
-                                  <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/index2.jpeg" alt="Third slide" style="height: 200px">
+                                  <div class="carousel-item" style="border: 2px solid;">
+                                    <img class="d-block w-100" src="img/index2.jpeg" alt="Third slide" style="height: 250px">
                                   </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -101,4 +104,6 @@
         </ul>
 
       </div>
+  </div>
     </nav>
+    

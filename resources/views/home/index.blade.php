@@ -105,7 +105,7 @@
                 </ul>
 
                 <!-- Tab panels -->
-                <div class="tab-content">
+                <div class="tab-content" style="padding: 0">
                     <!--Panel 7-->
                     <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
@@ -117,7 +117,7 @@
                             <div class="md-form form-sm mb-5">
                                 <i class="fa fa-user prefix"></i>
                                 <input type="text" id="modalLRInput10" class="form-control form-control-sm validate" name="name">
-                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Name</label>
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Name (not name may be phone no)</label>
                             </div>
 
                             <div class="md-form form-sm mb-4">
@@ -134,10 +134,10 @@
                         <!--Footer-->
                         <div class="modal-footer">
                             <div class="options text-center text-md-right mt-1">
-                                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                <!-- <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p> -->
                                 <p>Forgot <a href="#" class="blue-text">Password?</a></p>
                             </div>
-                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button> -->
                         </div>
 
                     </div>
@@ -152,32 +152,63 @@
                         <form  method="POST" action="/register" enctype="multipart/form-data">
                             @csrf
                              <input type="hidden" name="status" value=0>
-                            <div class="md-form form-sm mb-5">
-                                <i class="fa fa-user prefix"></i>
-                                <input type="text" id="modalLRInput15" class="form-control form-control-sm validate" name="name">
-                                <label data-error="wrong" data-success="right" for="modalLRInput15">Your Name</label>
+                            
+
+                            <div class="row">
+                              <div class="col-md-8">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-user prefix"></i>
+                                    <input type="text" id="modalLRInput15" class="form-control form-control-sm validate" name="name">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput15">Your Name</label>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="text" id="registerBatch" class="form-control form-control-sm validate" name="">
+                                    <label data-error="wrong" data-success="right" for="registerBatch">SSC Batch</label>
+                                </div>
+                              </div>
                             </div>
-                            <div class="md-form form-sm mb-5">
-                                <i class="fa fa-envelope prefix"></i>
-                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate" name="email">
-                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="email" id="modalLRInput12" class="form-control form-control-sm validate" name="email">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="md-form form-sm mb-5">
+                                  <i class="fa fa-phone prefix"></i>
+                                  <input type="text" id="registerMobile" class="form-control form-control-sm validate" name="">
+                                  <label data-error="wrong" data-success="right" for="registerMobile">Your Phone No</label>
+                                </div>
+                              </div>
                             </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" id="modalLRInput13" class="form-control form-control-sm validate" name="password">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="md-form form-sm mb-4">
+                                    <i class="fa fa-lock prefix"></i>
+                                    <input type="password" id="modalLRInput14" class="form-control form-control-sm validate" name="password_confirmation">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            
                              <div class="md-form form-sm mb-5">
                                 <i class="fa fa-image prefix"></i>
                                 <input type="file" id="modalLRInput16" class="form-control form-control-sm validate" name="profile_pic">
-                                
-                            </div>
-
-                            <div class="md-form form-sm mb-5">
-                                <i class="fa fa-lock prefix"></i>
-                                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate" name="password">
-                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
-                            </div>
-
-                            <div class="md-form form-sm mb-4">
-                                <i class="fa fa-lock prefix"></i>
-                                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate" name="password_confirmation">
-                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
                             </div>
 
                             <div class="text-center form-sm mt-2">
@@ -187,12 +218,12 @@
                      
                         </div>
                         <!--Footer-->
-                        <div class="modal-footer">
+                       <!--  <div class="modal-footer">
                             <div class="options text-right">
                                 <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
                             </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
-                        </div>
+                        </div> -->
                        
                     </div>
                     <!--/.Panel 8-->
