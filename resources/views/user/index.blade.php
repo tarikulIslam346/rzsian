@@ -26,6 +26,11 @@
 						@include('user.user-sidebar')
 					</div>
 					<div class="col-lg-7 col-md-7">
+						<form class="form-inline">
+					      <div class="md-form" style="width: 100%;">
+					        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="width: 100%;">
+					      </div>
+					    </form>
 						<div class="row clearfix user_body_wrap">
 							<div class="col-md-4">
 					            <div class="card">
@@ -142,8 +147,8 @@
 						<div class="right_sidebar">
 							<div class="all-batch">
 								<div class="card">
-								  <div class="card-header" style="background-color: #3f51b5;color:#fff">See Other Batch</div>
-								  <div class="card-body" style="overflow-y: scroll; height: 250px">
+								  <div class="card-header">See Other Batch</div>
+								  <div class="card-body">
 								  	<ul>
 									<a href="#">
 										<li>
@@ -237,6 +242,7 @@
 									</a>
 								</ul>
 							  </div>
+							  <div class="card-footer">
 							</div>
 								
 							</div>
