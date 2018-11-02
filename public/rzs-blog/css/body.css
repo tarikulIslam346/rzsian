@@ -1,0 +1,70 @@
+/*body style*/
+.user_body_wrap .col-md-4{
+    margin-bottom: 30px;
+}
+
+.user_body_wrap .src-image {
+  display: none;
+}
+
+.user_body_wrap .card {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  background-color: #284c79;
+  color: rgb(136, 172, 217);
+}
+
+.user_body_wrap .card .header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #FFF solid;
+  z-index: 1;
+}
+.user_body_wrap .card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.user_body_wrap .card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
+
+.container-wrap {
+    padding: 90px 0px 0px 0px;
+    height: 100vh;
+}
+
+
+.container-wrap ._r_left_side{
+    padding: 0px;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.card,
+.card-header:first-child{
+    border-radius: 0;
+}
+
+#modalLoginAvatar .modal-header button,
+#login-modal .modal-header button{
+    position: absolute;
+    right: 20px;
+}
+
+#modalLoginAvatar .modal-body p{
+    margin-bottom: 0px;
+}

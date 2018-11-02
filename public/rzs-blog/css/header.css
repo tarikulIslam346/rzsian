@@ -1,0 +1,36 @@
+
+/*header*/
+.header-right{
+width: 100%;
+}
+
+/*menu*/
+.default-color{
+    background-color: #3f51b5 !important;
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+}
+
+._rzs_megaMenu_back{
+    background-image: url("../../img/mega2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.navbar .dropdown-menu h1,
+.navbar .dropdown-menu a{
+    color: #fff;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: gray;
+}

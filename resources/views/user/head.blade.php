@@ -17,25 +17,22 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="user-view-element/custom-css/bootstrap.min.css">
-	<link rel="stylesheet" href="user-view-element/custom-css/mdb.min.css">
-	<!-- <link rel="stylesheet" href="user-view-element/custom-css/style.css"> -->
-	<link rel="stylesheet" href="user-view-element/custom-css/custom-user-style.css">
-
-
-
-
-
+	<link rel="stylesheet" href="3rd-party/css/bootstrap.min.css">
+	<link rel="stylesheet" href="3rd-party/css/mdb.min.css">
+	<link rel="stylesheet" href="rzs-blog/css/header.css">
+	<link rel="stylesheet" href="rzs-blog/css/left-sidebar.css">
+	<link rel="stylesheet" href="rzs-blog/css/right-sidebar.css">
+	<link rel="stylesheet" href="rzs-blog/css/body.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	 <script type="text/javascript" src="user-view-element/custom-js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="3rd-party/js/jquery-3.3.1.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 
   <!-- Bootstrap tooltips -->
   <!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="user-view-element/custom-js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="user-view-element/scripts/script.js"></script>
+  <script type="text/javascript" src="rzs-blog/js/script.js"></script>
+  <script type="text/javascript" src="3rd-party/js/bootstrap.min.js"></script>
   <!-- <script type="text/javascript" src="user-view-element/custom-js/mdb.min.js"></script> -->
 	<script>
 	  window.dataLayer = window.dataLayer || [];
