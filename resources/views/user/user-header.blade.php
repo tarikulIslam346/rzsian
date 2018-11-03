@@ -1,86 +1,59 @@
-
-<div class="pre-loader"></div>
-
-<nav class="mb-1 navbar navbar-expand-lg fixed-top  navbar-dark default-color">
-  <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+<div class="container-fluid">
+ <div class="row">
+   <div class="col-md-12 manu_primary_top"></div>
+   <div class="col-md-12 manu_primary_middle">
+     <!-- <div class="brand_logo"><img src="img/logo.png"></div> -->
+   </div>
+   <div class="col-md-12 manu_primary_right">
+      <nav class="navbar navbar-expand-lg navbar-dark manu_primary_manu">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
-        <ul class="navbar-nav mr-auto">
+        <ul class="nav navbar-nav mr-auto manu_primary_manu_ul">
           <li class="nav-item active">
             <a class="nav-link waves-effect waves-light" href="#">Home
               <span class="sr-only">(current)</span>
+            </a> 
+            
+          </li>
+          <li class="nav-item dropdown rzs-menu-overlap">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others
             </a>
+            <div class="dropdown-menu dropdown-default rzs-mega-menu" aria-labelledby="navbarDropdownMenuLink-3">
+               <ul class="mega-ul">
+                <li class="mega-li">
+                  <ul>
+                    <h5>Cricket</h5>
+                    <li><a href="">2017</a></li>
+                    <li><a href="">2018</a></li>
+                    <li><a href="">2019</a></li>
+                    <li><a href="">2020</a></li>
+                  </ul>
+                </li>
+                <li class="mega-li">
+                  <ul>
+                    <h5>Cricket</h5>
+                    <li><a href="">2017</a></li>
+                    <li><a href="">2018</a></li>
+                    <li><a href="">2019</a></li>
+                    <li><a href="">2020</a></li>
+                  </ul>
+                </li>
+                <li class="mega-li">
+                  <ul>
+                    <h5>Cricket</h5>
+                    <li><a href="">2017</a></li>
+                    <li><a href="">2018</a></li>
+                    <li><a href="">2019</a></li>
+                    <li><a href="">2020</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown has-mega-menu" style="position:static;">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Program</a>
-
-              <div class="dropdown-menu _rzs_megaMenu_back" style="width:100%">
-                  <div class="px-0 container ">
-                      <div class="row">
-                          <div class="col-md-3">
-                            <h1>Eid Fst</h1>
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                              <a class="dropdown-item" href="#">Or a link</a>
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                          </div>
-                          <div class="col-md-3">
-                            <h1>Cricket Fst</h1>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                              <a class="dropdown-item" href="#">Or a link</a>
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                              <a class="dropdown-item" href="#">Or a link</a>
-                          </div>
-                        <div class="col-md-6">
-                              <div class="container">
-                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                  <div class="carousel-item active" style="border: 2px solid;">
-                                    <img class="d-block w-100" src="img/index.jpeg" alt="First slide" style="height: 250px">
-                                  </div>
-                                  <div class="carousel-item" style="border: 2px solid;">
-                                    <img class="d-block w-100" src="img/index1.jpeg" alt="Second slide" style="height: 250px">
-                                  </div>
-                                  <div class="carousel-item" style="border: 2px solid;">
-                                    <img class="d-block w-100" src="img/index2.jpeg" alt="Third slide" style="height: 250px">
-                                  </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="sr-only">Next</span>
-                                </a>
-                              </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </li>
-      </ul>
+        </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
-          
           <li class="nav-item">
             <a class="nav-link waves-effect waves-light">
               <i class="fa fa-twitter"></i>
@@ -91,19 +64,10 @@
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink" style="width: 100%">
-              <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
-              <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-              <a class="dropdown-item waves-effect waves-light" href="/logout_user">logout</a>
-            </div>
-          </li>
         </ul>
-
       </div>
-  </div>
     </nav>
+   </div>
+ </div>
+</div>
     

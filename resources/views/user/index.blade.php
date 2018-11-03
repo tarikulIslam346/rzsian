@@ -7,10 +7,8 @@
 	@include('user.user-header')
 	
 
-	<div class="container">
-		<div class="container-wrap">
-	
-
+<div class="container">
+	<div class="container-wrap">
 	 @if(session('user_update'))
         <div class="alert  alert-success fade show" role="alert">
            {{ session('user_update') }} 

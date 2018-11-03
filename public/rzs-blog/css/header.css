@@ -1,36 +1,118 @@
-
-/*header*/
-.header-right{
-width: 100%;
+/*Bootstrap over wrap*/
+.rzs-menu-overlap{
+    position:static !important;
 }
 
-/*menu*/
-.default-color{
-    background-color: #3f51b5 !important;
+.dropdown-menu{
+    border-radius: 0;
+}
+/*bootstrap overlap*/
+
+.manu_primary_top{
+    height: 45px;
+    background-color: #1e2024;
 }
 
-.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link{
-    font-family: Roboto,"Helvetica Neue",sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.navbar-expand-lg .navbar-nav .nav-link{
-    padding-right: 1rem;
-    padding-left: 1rem;
+.manu_primary_middle{
+    position: relative;
+    height: 90px;
+    background-color: #000;
 
 }
-
-._rzs_megaMenu_back{
-    background-image: url("../../img/mega2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.manu_primary_middle .brand_logo img{
+    position: absolute;
+    z-index: 9999;
+    top: -35%;
+    left: 5%;
 }
-.navbar .dropdown-menu h1,
-.navbar .dropdown-menu a{
+
+.manu_primary_right{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.manu_primary_right .navbar{
+    padding-left: 25%;
+}
+
+.manu_primary_manu{
+    background: -webkit-linear-gradient(110deg, #000 80%, #1e2024 80%);
+    background: -o-linear-gradient(110deg, #000 80%, #1e2024 80%);
+    background: -moz-linear-gradient(110deg, #000 80%, #1e2024 80%);
+    background: linear-gradient(110deg, #000 20%, #1e2024 20%);
+}
+
+.manu_primary_manu ul>li a{
+    font-weight: 700;
+    color: #fff;
+    line-height: 30px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.manu_primary_manu .manu_primary_manu_ul .nav-link{
+    padding: 0 40px
+}
+
+/*Mega menu*/
+
+.rzs-mega-menu{
+    background-color: #1e2024;
+    /*background: linear-gradient( to bottom right, rgba(6, 0, 255, .8), rgba(255, 0, 0, .8));*/
+    width: 80%;
+    left: 10%;
+    right: 10%;
+}
+.rzs-mega-menu .mega-ul{
+    padding-left: 0;
+    padding: 43px 55px;
+}
+.rzs-mega-menu .mega-li{
+    display: inline-block;
+}
+.rzs-mega-menu .mega-li>ul>li{
+    list-style: none;
+}
+.rzs-mega-menu .mega-li>ul h5{
+    color: #fff;
+}
+/*.rzs-mega-menu .rzs_brand_logo{
+    width: 60%;
+}*/
+.rzs-mega-menu .mega-li>ul>li a{
+    line-height: 10px;
+    font-weight: 700;
+    padding: 5px 0;
+    font-size: 12px;
+    color: darkgray;
+}
+.rzs-mega-menu .mega-li>ul>li a:hover{
     color: #fff;
 }
 
-.dropdown-item:focus, .dropdown-item:hover{
-    background-color: gray;
+/*media query*/
+
+@media screen and (max-width: 480px) {
+    .manu_primary_middle .brand_logo img{
+        position: absolute;
+        height: 80px;
+        z-index: 9999;
+        top: 5%;
+        left: 5%;
+    }
+
+    .rzs-mega-menu{
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .rzs-mega-menu .mega-ul{
+        padding: 0;
+    }
+
+    .manu_primary_right .navbar{
+        padding-left: 20%;
+    }
 }
