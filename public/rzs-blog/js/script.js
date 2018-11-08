@@ -20,5 +20,13 @@ jQuery(document).ready(function($) {
 			$('.menu-icon').removeClass('open');
 		}
 	});
+
+		$(window).bind('scroll', function () {
+	    if ($(window).scrollTop() > 5) {
+	        $('.navbar').addClass('fixed');
+	    } else {
+	        $('.navbar').removeClass('fixed');
+	    }
+	});
 });
 

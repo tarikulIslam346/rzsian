@@ -2,7 +2,7 @@
  <div class="row">
    <div class="col-md-12 manu_primary_top"></div>
    <div class="col-md-12 manu_primary_middle">
-     <!-- <div class="brand_logo"><img src="img/logo.png"></div> -->
+     <div class="brand_logo"><img src="img/logo.png"></div>
    </div>
    <div class="col-md-12 manu_primary_right">
       <nav class="navbar navbar-expand-lg navbar-dark manu_primary_manu">

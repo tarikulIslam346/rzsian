@@ -256,5 +256,6 @@
 		</div>
 	</div>
 
+ <script type="text/javascript" src="3rd-party/js/mdb.min.js"></script>
 </body>
 </html>
