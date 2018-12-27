@@ -2,9 +2,6 @@
 	<meta charset="utf-8">
 	<title>rzsian</title>
 
-	<!-- Site favicon -->
-	<!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
-
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,13 +24,8 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script type="text/javascript" src="3rd-party/js/jquery-3.3.1.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-
-  <!-- Bootstrap tooltips -->
-  <!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="rzs-blog/js/script.js"></script>
-  <script type="text/javascript" src="3rd-party/js/bootstrap.min.js"></script>
-  <!-- <script type="text/javascript" src="user-view-element/custom-js/mdb.min.js"></script> -->
+  	<script type="text/javascript" src="rzs-blog/js/script.js"></script>
+  	<script type="text/javascript" src="3rd-party/js/bootstrap.min.js"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}

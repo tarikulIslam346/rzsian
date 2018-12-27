@@ -1,7 +1,5 @@
 <div class="container-fluid">
 <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-7">
     <section style="margin-top: 20px">
       <div class="home_content_wrap">
         <div class="card">
@@ -148,6 +146,5 @@
         </div>
       </div>
     </section>
-  </div>
 </div>
 </div>
