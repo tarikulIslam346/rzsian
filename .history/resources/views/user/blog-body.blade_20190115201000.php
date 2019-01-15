@@ -2,7 +2,7 @@
 <div class="row">
     <section style="margin-top: 20px">
       
-      <div class="home_content_wrap">
+      <!-- <div class="home_content_wrap">
         <div class="card">
           <i class="fa fa-ellipsis-h settings"></i>
           <div class="row">
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 </div>
 </div>

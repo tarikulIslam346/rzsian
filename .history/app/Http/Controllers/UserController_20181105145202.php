@@ -17,11 +17,4 @@ class UserController extends Controller
       ]);
       return redirect('/user')->with('user_update','successfully');
     }
-    public function getBatchdata($batch){
-     $user = User::where('batch',$batch)->get();
-     /* view('user.index',compact('user')); */
-     return view('user.index',$user );
-    }
-
-
 }

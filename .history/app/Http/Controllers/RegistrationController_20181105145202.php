@@ -26,8 +26,6 @@ class RegistrationController extends Controller
         User::create([
             'name'  => request('name') , 
             'email' => request('email'),
-            'batch' => request('batch'),
-            'phone' => request('phone'),
             'status' => request('status'),
             'profile_pic' => $profile_pic,
             'password' => bcrypt(request('password'))

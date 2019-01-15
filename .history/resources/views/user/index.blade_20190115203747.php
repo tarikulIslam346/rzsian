@@ -31,7 +31,6 @@
 					      </div>
 					    </form> -->
 						<div class="row clearfix user_body_wrap">
-						@if(isset($user))
 						@foreach($user as $u)
 							<div class="col-md-4">
 					            <div class="card">
@@ -48,7 +47,6 @@
 					            </div>
 							</div>
 							@endforeach
-							@endif
 							<div class="col-md-4">
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
