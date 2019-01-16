@@ -8,14 +8,14 @@
           <div class="row">
             <div class="col-md-4">
               <div class="item_head">
-                <img src="img/card-blog.jpg">
+                <img src="img/add.jpg">
               </div>
             </div>
             <div class="col-md-8">
              <div class="item_body">
                 <div class="item_body_head">
                   <div class="row">
-                    <img src="img/card-blog.jpg">
+                    <img src="img/add.jpg">
                     <div class="col-md-10">
                       <div class="item_body_title"><p>Foodoli Foodoli Foodoli</p></div>
                       <div class="item_body_meta"><p>26 March 2019</p></div>

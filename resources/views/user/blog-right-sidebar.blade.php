@@ -5,96 +5,15 @@
 								  <div class="card-header">See Other Batch</div>
 								  <div class="card-body">
 								  	<ul>
-									<a href="/batch_wise/2010">
+								  	@if(isset($batch))
+								  	@foreach($batch as $b)
+									<a href="/{{$b->batch}}">
 										<li>
-											<p>Batch: 2010</p>
+											<p>Batch: {{$b->batch}}</p>
 										</li>
 									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
-									<a href="#">
-										<li>
-											<p>Batch: 2007</p>
-										</li>
-									</a>
+									@endforeach
+									@endif
 								</ul>
 							  </div>
 							  <div class="card-footer">
