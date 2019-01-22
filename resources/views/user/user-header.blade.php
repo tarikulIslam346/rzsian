@@ -17,6 +17,12 @@
             </a> 
             
           </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" href="/user">Profile
+              <span class="sr-only">(current)</span>
+            </a> 
+            
+          </li>
           <li class="nav-item dropdown rzs-menu-overlap">
             <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others
             </a>
@@ -59,10 +65,12 @@
               <i class="fa fa-twitter"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect waves-light">
-              <i class="fa fa-google-plus"></i>
-            </a>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                  <!-- <a class="dropdown-item" href="#">My account</a> -->
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-sign-out" style="color:red"></i> Log out</a>
+              </div>
           </li>
         </ul>
       </div>

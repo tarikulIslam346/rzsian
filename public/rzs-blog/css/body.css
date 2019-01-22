@@ -75,8 +75,9 @@
 /*home article*/
 .home_content_wrap{
   /*margin-right: 15px;*/
-  margin-bottom: 40px
+  margin-bottom: 20px
 }
+
 .home_content_wrap .settings{
   position: absolute;
     right: 3%;
@@ -90,6 +91,9 @@
 }
 .home_content_wrap .item_body{
   margin: 20px 0;
+}
+.home_content_wrap .write_blog .item_body{
+  margin: 20px 30px;
 }
 .home_content_wrap .item_body .item_body_head img{
   width: 40px;
@@ -112,4 +116,25 @@
 .home_content_wrap .item_body .item_body_footer{
   font-size: 14px;
   color: gray;
+}
+.home_content_wrap .single-page .single-page-cover-image{
+  background-image: url("../../img/title-image.png");
+  height: 374px;
+  background-size: 100% auto;
+}
+
+.home_content_wrap .single-page .item_body{
+  margin: 20px 30px;
+}
+
+.home_content_wrap .single-page .item_body .item_body_head .item_body_title p{
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+}
+
+
+.home_content_wrap .single-page .item_body .item_body_head{
+  margin-bottom: 30px;
 }

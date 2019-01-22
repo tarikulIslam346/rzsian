@@ -10,7 +10,8 @@
 }
 .right_sidebar .all-batch .card-body{
    overflow-y: scroll;
-   height: 250px
+   height: 250px;
+   padding: 0;
 }
 
 .right_sidebar .all-batch ul>a>li{

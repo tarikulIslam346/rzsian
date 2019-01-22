@@ -20,4 +20,8 @@ class PagesController extends Controller
     		return view('home.index');
     	}
     } 
+
+    public function details(){
+        return view('user.single-page');
+    }
 }
