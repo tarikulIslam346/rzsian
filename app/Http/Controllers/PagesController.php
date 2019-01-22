@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\user;
 
 class PagesController extends Controller
 {
@@ -12,7 +13,11 @@ class PagesController extends Controller
     }
     public function batch_info(){
     	if(\Auth::check())
-    	return view('user.index');
-    	else return view('home.index');
+    	{
+    		$batch = User::select('batch')->distinct('batch')->get();;
+    		return view('user.index',compact('batch'));
+    	}else {
+    		return view('home.index');
+    	}
     } 
 }

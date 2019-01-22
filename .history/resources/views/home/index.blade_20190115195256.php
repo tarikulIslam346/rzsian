@@ -37,7 +37,7 @@
                           <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                               <ul class="navbar-nav ml-auto">
                                   <li class="nav-item active">
-                                      <a class="nav-link" href="/user" ><i class="fa fa-envelope"></i> Me <span class="sr-only">(current)</span></a>
+                                      <a class="nav-link" href="/user" target="_blank"><i class="fa fa-envelope"></i> Me <span class="sr-only">(current)</span></a>
                                   </li>
                                   <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile </a>

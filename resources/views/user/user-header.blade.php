@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
         <ul class="nav navbar-nav mr-auto manu_primary_manu_ul">
           <li class="nav-item active">
-            <a class="nav-link waves-effect waves-light" href="#">Home
+            <a class="nav-link waves-effect waves-light" href="/user">Home
               <span class="sr-only">(current)</span>
             </a> 
             

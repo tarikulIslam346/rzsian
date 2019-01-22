@@ -12,16 +12,15 @@ class UserController extends Controller
      User::where('id',$user_id)
      	->update([
       	'name' => request('name'),
-      	'password' =>bcrypt(request('password')),
+      	'password' =>request('password'),
       	'email' => request('email')
       ]);
       return redirect('/user')->with('user_update','successfully');
     }
     public function getBatchdata($batch){
      $user = User::where('batch',$batch)->get();
-     $batch = User::select('batch')->distinct('batch')->get();
      /* view('user.index',compact('user')); */
-     return view('user.index',compact('user','batch') );
+     return redirect('/user')->with(['user'=>'user']);
     }
 
 

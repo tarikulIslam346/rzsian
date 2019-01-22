@@ -9,4 +9,3 @@ Route::get('/logout_user','SessionController@destroy_user');
 Route::get('/admin_login','AdminController@create')->name('login');
 Route::get('/admin','AdminController@index');
 Route::post('/user_update/{id}','UserController@update');
-Route::get('/{batch}','UserController@getBatchdata');

@@ -19,9 +19,8 @@ class UserController extends Controller
     }
     public function getBatchdata($batch){
      $user = User::where('batch',$batch)->get();
-     $batch = User::select('batch')->distinct('batch')->get();
      /* view('user.index',compact('user')); */
-     return view('user.index',compact('user','batch') );
+     return view('user.index',compact('user') );
     }
 
 
