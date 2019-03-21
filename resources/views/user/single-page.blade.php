@@ -54,10 +54,6 @@
                     <div class="col-md-3">Comment</div>
                   </div>
                 </div>
-
-
-
-
              </div>
             </div>
           </div>
