@@ -43,10 +43,9 @@
         </div>
       </div>
 
-      
+      <div class="home_content_wrap">
       @if(isset($post))
 		  	@foreach($post as $p)
-        <div class="home_content_wrap">
         <div class="card">
           <i class="fa fa-ellipsis-h settings"></i>
           <div class="row">
@@ -81,11 +80,10 @@
             </div>
           </div>
         </div>
-        </div>
 			  @endforeach
 			@endif
  
-
+      </div>
     </section>
 </div>
 </div>

@@ -13,4 +13,4 @@ Route::get('{batch}','UserController@getBatchdata')->where(['batch' => '[0-9]+']
 Route::get('/single-page','PagesController@details');
 
 
-Route::post('/post_create','PostsController@store');
+Route::post('/post_create','RegistrationController@store');

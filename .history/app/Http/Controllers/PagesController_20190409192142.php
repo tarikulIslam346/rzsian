@@ -17,7 +17,7 @@ class PagesController extends Controller
     	{
             $batch = User::select('batch')->distinct('batch')->get();
             $post = Post::all();
-    		return view('user.index',compact('batch','post'));
+    		return view('user.index',compact('batch'));
     	}else {
     		return view('home.index');
     	}
