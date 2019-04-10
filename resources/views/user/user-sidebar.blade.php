@@ -65,14 +65,14 @@
                     <input type="password" name="password" id="edit_password" class="form-control form-control-sm validate ml-0">
                     <label data-error="wrong" data-success="right" for="edit_password" class="ml-0">Chage Password</label>
                   </div>
-        					<div class="row">
-        						<div class="col-sm-12">
-        							<div class="input-group">
-        								<button class="btn btn-primary btn-lg btn-block" type="submit">Update</button>
-        							</div>
-        						</div>
-        					</div>
-        				</form>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
       	 </div>
     </div>
