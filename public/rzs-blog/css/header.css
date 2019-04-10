@@ -2,7 +2,20 @@
 .rzs-menu-overlap{
     position:static !important;
 }
-
+.search_post i{
+    color: #FFF;
+    cursor: pointer;
+  }
+.search_post {
+    width: 200%;
+  }
+.search_post .md-form{
+    width: 70%;
+  }
+.search_post .md-form .form-control{
+    width: 94%;
+  }
+  
 .dropdown-menu{
     border-radius: 0;
 }

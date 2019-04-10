@@ -23,6 +23,7 @@
             </a> 
             
           </li>
+          
           <li class="nav-item dropdown rzs-menu-overlap">
             <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others
             </a>
@@ -58,6 +59,17 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+          <form class="form-inline search_post">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+            <i class="fa fa-search"></i>
+          </form>
+          </li>
+          <!-- <a class="nav-link waves-effect waves-light"> -->
+              
+            <!-- </a> -->
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item">

@@ -1,5 +1,10 @@
 /*right sidebar*/
 
+.col-md-2{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 .right_sidebar .all-batch ul{
     list-style: none;
     padding-left: 0;
