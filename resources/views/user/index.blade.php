@@ -23,7 +23,7 @@
 					<div class="col-md-2 _r_left_side">
 						@include('user.user-sidebar')
 					</div>
-					<div class="col-lg-8 col-md-8">
+					<div class="col-md-7">
 					@include('user.blog-body')
 						<div class="row clearfix user_body_wrap">
 						@if(isset($user))
@@ -70,7 +70,7 @@
 								@endif
 							</div>
 						</div>
-					<div class="col-md-2">
+					<div class="col-md-3">
 					@include('user.blog-right-sidebar')
 					</div>
 				</div>

@@ -51,12 +51,12 @@
             <!-- <div class="card"> -->
                 
               <div class="row">
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                   <div class="item_head">
                     <img src="img/add.jpg">
                   </div>
-                </div>
-                <div class="col-md-9">
+                </div> -->
+                <div class="col-md-12">
                     <div class="item_body">
                         <div class="item_body_head">
                           <div class="card">
@@ -76,15 +76,18 @@
                             <div class="card-body">
                               <div class="item_body_content">
                                 <p>{{$p->post}}</p>
+                                <div class="item_head">
+                                  <img src="img/add.jpg">
+                                </div>
                               </div>
                             </div>
                             <div class="card-footer text-muted">
                                 <div class="item_body_footer">
                                   <div class="row">
-                                    <div class="col-md-3">Like</div>
-                                    <div class="col-md-3">Share</div>
-                                    <div class="col-md-3">View</div>
-                                    <div class="col-md-3">Comments</div>
+                                    <div class="col-md-3 footer_element">Like</div>
+                                    <div class="col-md-3 footer_element">Share</div>
+                                    <div class="col-md-3 footer_element">View</div>
+                                    <div class="col-md-3 footer_element">Comments</div>
                                   </div>
                                 </div>
                             </div>
