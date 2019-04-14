@@ -84,10 +84,10 @@
                             <div class="card-footer text-muted">
                                 <div class="item_body_footer">
                                   <div class="row">
-                                    <div class="col-md-3 footer_element">Like</div>
-                                    <div class="col-md-3 footer_element">Share</div>
-                                    <div class="col-md-3 footer_element">View</div>
-                                    <div class="col-md-3 footer_element">Comments</div>
+                                    <div class="col-md-3 footer_element">Like<span>200</span></div>
+                                    <div class="col-md-3 footer_element">Share<span>200</span></div>
+                                    <div class="col-md-3 footer_element">View<span>200</span></div>
+                                    <div class="col-md-3 footer_element">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
