@@ -48,14 +48,7 @@
         @if(isset($post))
   		  	@foreach($post as $p)
           <div class="home_content_wrap">
-            <!-- <div class="card"> -->
-                
               <div class="row">
-                <!-- <div class="col-md-3">
-                  <div class="item_head">
-                    <img src="img/add.jpg">
-                  </div>
-                </div> -->
                 <div class="col-md-12">
                     <div class="item_body">
                         <div class="item_body_head">

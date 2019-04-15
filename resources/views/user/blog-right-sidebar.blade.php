@@ -1,4 +1,3 @@
-
 <div class="right_sidebar">
 	<div class="all-batch">
 		<div class="card">
@@ -18,7 +17,6 @@
 	  </div>
 	  <div class="card-footer">
 	</div>
-		
 	</div>
 </div>
 <div class="mx-h-350" style="margin-top:40px;background-color: #000 ">

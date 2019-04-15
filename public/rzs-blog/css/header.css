@@ -139,3 +139,14 @@
     top: 0;
     width: 100%;
 }
+
+.nav-flex-icons .dropdown-item{
+    padding: 0 1rem;
+}
+.nav-flex-icons .dropdown-menu a{
+    text-transform: none !important; 
+}
+.nav-flex-icons .dropdown-menu a:hover{
+    background: rgba(29, 33, 41, .2);
+    color: rgba(35, 7, 160, 0.945);
+}
