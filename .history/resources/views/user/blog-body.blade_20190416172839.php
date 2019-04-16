@@ -117,7 +117,7 @@
                                           <div class="comment-box">
                                             <div class="comment-head">
                                               <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
-                                              <span>{{$c->created_at->diffForHumans()}}</span>
+                                              <span>{{$user->created_at->diffForHumans()}}</span>
                                               <i class="fa fa-reply"></i>
                                               <i class="fa fa-heart"></i>
                                             </div>

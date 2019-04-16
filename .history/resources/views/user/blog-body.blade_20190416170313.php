@@ -102,22 +102,11 @@
                                     
                                         <div class="comment-main-level">
                                           <!-- Avatar -->
-                                         @php
-                                         $user = \App\User::where('id',$c->user_id)->first();
-                                         @endphp
-                                     
-                                          
-
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$user->profile_pic}}" alt=""></div>
-                                         
-                  
-                                        
-
-                                          <!-- Contenedor del Comentario -->
-                                          <div class="comment-box">
+                                          <p>{{$c->id}}</p>
+                                       
                                             <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
-                                              <span>{{$c->created_at->diffForHumans()}}</span>
+                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog"></a></h6>
+                                              <span>hace 20 minutos</span>
                                               <i class="fa fa-reply"></i>
                                               <i class="fa fa-heart"></i>
                                             </div>

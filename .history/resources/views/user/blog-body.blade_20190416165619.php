@@ -94,7 +94,6 @@
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
                             <div id="comment_{{$p->id}}"></div>
                                 <div class="item_body_footer">
-                                
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -102,22 +101,14 @@
                                     
                                         <div class="comment-main-level">
                                           <!-- Avatar -->
-                                         @php
-                                         $user = \App\User::where('id',$c->user_id)->first();
-                                         @endphp
-                                     
-                                          
-
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$user->profile_pic}}" alt=""></div>
-                                         
-                  
-                                        
-
+                                          @foreach( $c->id->user as $u)
+                                          <div class="comment-avatar"><img src="/images/user_profile/{{$u->profile_pic}}" alt=""></div>
+                                          @endforeach
                                           <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
-                                              <span>{{$c->created_at->diffForHumans()}}</span>
+                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog"></a></h6>
+                                              <span>hace 20 minutos</span>
                                               <i class="fa fa-reply"></i>
                                               <i class="fa fa-heart"></i>
                                             </div>

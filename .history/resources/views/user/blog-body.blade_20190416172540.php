@@ -104,6 +104,8 @@
                                           <!-- Avatar -->
                                          @php
                                          $user = \App\User::where('id',$c->user_id)->first();
+
+      
                                          @endphp
                                      
                                           
@@ -116,8 +118,8 @@
                                           <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
-                                              <span>{{$c->created_at->diffForHumans()}}</span>
+                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog"></a></h6>
+                                              <span>hace 20 minutos</span>
                                               <i class="fa fa-reply"></i>
                                               <i class="fa fa-heart"></i>
                                             </div>
