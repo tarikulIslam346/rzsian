@@ -63,7 +63,6 @@
                           <div class="card">
                           <div class="dropdown settings">
                               <i class="fa fa-trash"></i>
-                             
                             </div>
                             <div class="card-header user_image">
                               <img src="img/add.jpg">
@@ -76,7 +75,7 @@
                               <div class="item_body_content">
                                 <p>{{$p->post}}</p>
                                 <div class="item_head">
-                                  <img src="img/add.jpg">
+                                  <!-- <img src="img/add.jpg"> -->
                                 </div>
                               </div>
                             </div>
@@ -89,31 +88,19 @@
                                     <div class="col-md-3 footer_element"><button id="{{$p->id}}">Comments</button><span>200</span></div>
                                   </div>
                                 </div>
-                              
                             </div>
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
                             <div id="comment_{{$p->id}}"></div>
                                 <div class="item_body_footer">
-                                
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
                                       <li>
-                                    
                                         <div class="comment-main-level">
-                                          <!-- Avatar -->
                                          @php
                                          $user = \App\User::where('id',$c->user_id)->first();
                                          @endphp
-                                     
-                                          
-
                                           <div class="comment-avatar"><img src="/images/user_profile/{{$user->profile_pic}}" alt=""></div>
-                                         
-                  
-                                        
-
-                                          <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">
                                               <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
@@ -127,12 +114,10 @@
                                           </div>
                                         </div>
 
-                                        <!-- Respuestas de los comentarios -->
-                                        <ul class="comments-list reply-list">
+                                        <!-- Do not delete -->
+                                        <!-- <ul class="comments-list reply-list">
                                           <li>
-                                            <!-- Avatar -->
                                             <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                                            <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
                                               <div class="comment-head">
                                                 <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
@@ -147,9 +132,7 @@
                                           </li>
 
                                           <li>
-                                            <!-- Avatar -->
                                             <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                                            <!-- Contenedor del Comentario -->
                                             <div class="comment-box">
                                               <div class="comment-head">
                                                 <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
@@ -162,14 +145,12 @@
                                               </div>
                                             </div>
                                           </li>
-                                        </ul>
+                                        </ul> -->
                                       </li>
 
-                                      <li>
+                                      <!-- <li>
                                         <div class="comment-main-level">
-                                          <!-- Avatar -->
                                           <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                                          <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">
                                               <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
@@ -182,7 +163,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                      </li>
+                                      </li> -->
                                     </ul>
                                   </div>
                                   @endforeach
@@ -196,12 +177,14 @@
             <!-- </div> -->
           </div>
           <script>
-$(document).ready(function() {
-    $("#{{$p->id}}").click(function() {
-        $('#comment_{{$p->id}}').after("<div class='avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}'  width='30' class='avatar-photo'>	<form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><br><button type='submit'>Submit</button></form><br>");
-    });
-})
-</script> 
+            $(document).ready(function() {
+                $("#{{$p->id}}").click(function() {
+                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{$user->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button type='submit'>Submit</button></form></div></div></div></ul>");
+
+                    // $('#comment_{{$p->id}}').after("<div class='avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}'  width='30' class='avatar-photo'>	<form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><br><button type='submit'>Submit</button></form><br>");
+                });
+            })
+            </script> 
   			  @endforeach
   			@endif
       </section>
