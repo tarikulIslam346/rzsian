@@ -7,7 +7,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Traits\Localizable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Database\Eloquent\Collection as ModelCollection;
 
 class NotificationSender
@@ -96,7 +95,7 @@ class NotificationSender
                 continue;
             }
 
-            $this->withLocale($this->preferredLocale($notifiable, $notification), function () use ($viaChannels, $notifiable, $original) {
+            $this->withLocale($notification->locale ?? $this->locale, function () use ($viaChannels, $notifiable, $original) {
                 $notificationId = Str::uuid()->toString();
 
                 foreach ((array) $viaChannels as $channel) {
@@ -104,22 +103,6 @@ class NotificationSender
                 }
             });
         }
-    }
-
-    /**
-     * Get the notifiable's preferred locale for the notification.
-     *
-     * @param  mixed  $notifiable
-     * @param  mixed  $notification
-     * @return string|null
-     */
-    protected function preferredLocale($notifiable, $notification)
-    {
-        return $notification->locale ?? $this->locale ?? value(function () use ($notifiable) {
-            if ($notifiable instanceof HasLocalePreference) {
-                return $notifiable->preferredLocale();
-            }
-        });
     }
 
     /**

@@ -78,9 +78,7 @@ class DatabaseQueue extends Queue implements QueueContract
      */
     public function push($job, $data = '', $queue = null)
     {
-        return $this->pushToDatabase($queue, $this->createPayload(
-            $job, $this->getQueue($queue), $data
-        ));
+        return $this->pushToDatabase($queue, $this->createPayload($job, $data));
     }
 
     /**
@@ -107,9 +105,7 @@ class DatabaseQueue extends Queue implements QueueContract
      */
     public function later($delay, $job, $data = '', $queue = null)
     {
-        return $this->pushToDatabase($queue, $this->createPayload(
-            $job, $this->getQueue($queue), $data
-        ), $delay);
+        return $this->pushToDatabase($queue, $this->createPayload($job, $data), $delay);
     }
 
     /**
@@ -128,7 +124,7 @@ class DatabaseQueue extends Queue implements QueueContract
 
         return $this->database->table($this->table)->insert(collect((array) $jobs)->map(
             function ($job) use ($queue, $data, $availableAt) {
-                return $this->buildDatabaseRecord($queue, $this->createPayload($job, $this->getQueue($queue), $data), $availableAt);
+                return $this->buildDatabaseRecord($queue, $this->createPayload($job, $data), $availableAt);
             }
         )->all());
     }

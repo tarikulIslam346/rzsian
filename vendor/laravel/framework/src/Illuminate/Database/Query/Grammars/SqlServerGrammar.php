@@ -491,11 +491,7 @@ class SqlServerGrammar extends Grammar
      */
     public function wrapTable($table)
     {
-        if (! $this->isExpression($table)) {
-            return $this->wrapTableValuedFunction(parent::wrapTable($table));
-        }
-
-        return $this->getValue($table);
+        return $this->wrapTableValuedFunction(parent::wrapTable($table));
     }
 
     /**

@@ -194,9 +194,13 @@ class MySqlGrammar extends Grammar
      */
     protected function compileJsonUpdateColumn($key, JsonExpression $value)
     {
-        list($field, $path) = $this->wrapJsonFieldAndPath($key);
+        $path = explode('->', $key);
 
-        return "{$field} = json_set({$field}{$path}, {$value->getValue()})";
+        $field = $this->wrapValue(array_shift($path));
+
+        $accessor = "'$.\"".implode('"."', $path)."\"'";
+
+        return "{$field} = json_set({$field}, {$accessor}, {$value->getValue()})";
     }
 
     /**
@@ -211,7 +215,8 @@ class MySqlGrammar extends Grammar
     public function prepareBindingsForUpdate(array $bindings, array $values)
     {
         $values = collect($values)->reject(function ($value, $column) {
-            return $this->isJsonSelector($column) && is_bool($value);
+            return $this->isJsonSelector($column) &&
+                in_array(gettype($value), ['boolean', 'integer', 'double']);
         })->all();
 
         return parent::prepareBindingsForUpdate($bindings, $values);

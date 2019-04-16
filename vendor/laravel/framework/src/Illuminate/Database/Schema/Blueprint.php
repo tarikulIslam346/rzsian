@@ -22,13 +22,6 @@ class Blueprint
     protected $table;
 
     /**
-     * The prefix of the table.
-     *
-     * @var string
-     */
-    protected $prefix;
-
-    /**
      * The columns that should be added to the table.
      *
      * @var \Illuminate\Database\Schema\ColumnDefinition[]
@@ -71,13 +64,11 @@ class Blueprint
      *
      * @param  string  $table
      * @param  \Closure|null  $callback
-     * @param  string  $prefix
      * @return void
      */
-    public function __construct($table, Closure $callback = null, $prefix = '')
+    public function __construct($table, Closure $callback = null)
     {
         $this->table = $table;
-        $this->prefix = $prefix;
 
         if (! is_null($callback)) {
             $callback($this);
@@ -1251,7 +1242,7 @@ class Blueprint
      */
     protected function createIndexName($type, array $columns)
     {
-        $index = strtolower($this->prefix.$this->table.'_'.implode('_', $columns).'_'.$type);
+        $index = strtolower($this->table.'_'.implode('_', $columns).'_'.$type);
 
         return str_replace(['-', '.'], '_', $index);
     }

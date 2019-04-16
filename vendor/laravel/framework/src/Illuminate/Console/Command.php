@@ -566,7 +566,7 @@ class Command extends SymfonyCommand
     /**
      * Get the output implementation.
      *
-     * @return \Illuminate\Console\OutputStyle
+     * @return \Symfony\Component\Console\Output\OutputInterface
      */
     public function getOutput()
     {

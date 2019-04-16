@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage\Node;
 
 /**
@@ -487,7 +488,7 @@ final class File extends AbstractNode
                 'coverage'        => 0,
                 'crap'            => 0,
                 'package'         => $class['package'],
-                'link'            => $link . $class['startLine'],
+                'link'            => $link . $class['startLine']
             ];
 
             foreach ($class['methods'] as $methodName => $method) {
@@ -500,7 +501,7 @@ final class File extends AbstractNode
                 foreach (\range($method['startLine'], $method['endLine']) as $lineNumber) {
                     $this->codeUnitsByLine[$lineNumber] = [
                         &$this->classes[$className],
-                        &$this->classes[$className]['methods'][$methodName],
+                        &$this->classes[$className]['methods'][$methodName]
                     ];
                 }
             }
@@ -523,7 +524,7 @@ final class File extends AbstractNode
                 'coverage'        => 0,
                 'crap'            => 0,
                 'package'         => $trait['package'],
-                'link'            => $link . $trait['startLine'],
+                'link'            => $link . $trait['startLine']
             ];
 
             foreach ($trait['methods'] as $methodName => $method) {
@@ -536,7 +537,7 @@ final class File extends AbstractNode
                 foreach (\range($method['startLine'], $method['endLine']) as $lineNumber) {
                     $this->codeUnitsByLine[$lineNumber] = [
                         &$this->traits[$traitName],
-                        &$this->traits[$traitName]['methods'][$methodName],
+                        &$this->traits[$traitName]['methods'][$methodName]
                     ];
                 }
             }
@@ -562,7 +563,7 @@ final class File extends AbstractNode
                 'ccn'             => $function['ccn'],
                 'coverage'        => 0,
                 'crap'            => 0,
-                'link'            => $link . $function['startLine'],
+                'link'            => $link . $function['startLine']
             ];
 
             foreach (\range($function['startLine'], $function['endLine']) as $lineNumber) {
