@@ -31,6 +31,6 @@ class CommentEvent
      */
     public function broadcastOn()
     {
-       return ['status-liked'];;
+        return new PrivateChannel('channel-name');
     }
 }
