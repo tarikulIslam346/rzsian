@@ -18,10 +18,7 @@ class PagesController extends Controller
     	{
             $batch = User::select('batch')->distinct('batch')->get();
             $post = Post::all();
-            $comments = Comment::select('posts.id','comments.comment','comments.user_id','users.name','users.profile_pic','users.batch')
-                                ->join('posts','posts.id','=','comments.post_id')
-                                ->join('users','users.id','=','comments.user_id')
-                                ->get();
+            $comments = Comment::select('posts.id','comments.comment','comments.user_id')->join('posts','posts.id','=','comments.post_id')->get();
            // dd($comments);
 
     		return view('user.index',compact('batch','post','comments'));

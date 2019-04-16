@@ -101,7 +101,7 @@
                                       @foreach($comments as $c)
                                         <div class="comment-main-level">
                                           <!-- Avatar -->
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$c->profile_pic}}" alt=""></div>
+                                          <div class="comment-avatar"><img src="{{$c->profile_pic}}" alt=""></div>
                                           <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">

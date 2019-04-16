@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', 'PagesController@home');
-Route::get('/user','PagesController@user_info');
+Route::get('/user','PagesController@batch_info');
 Route::post('/register','RegistrationController@store');
 Route::post('/login','SessionController@store');
 Route::get('/logout','SessionController@destroy');

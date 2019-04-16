@@ -43,14 +43,6 @@
             </div>
           </div>
         </div>
-        @if(session('comment_create'))
-        <div class="alert  alert-success fade show" role="alert">
-           {{ session('comment_create') }} 
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>                   
-       @endif 
 
         
         @if(isset($post))
@@ -86,37 +78,32 @@
                                     <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
                                     <div class="col-md-3 footer_element">View<span>200</span></div>
-                                    <div class="col-md-3 footer_element"><button id="{{$p->id}}">Comments</button><span>200</span></div>
+                                    <div class="col-md-3 footer_element"><button id="comment">Comments</button><span>200</span></div>
                                   </div>
                                 </div>
-                              
+                                <div id="comment_box"></div>
                             </div>
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
-                            <div id="comment_{{$p->id}}"></div>
                                 <div class="item_body_footer">
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
                                       <li>
-                                      @if(isset($comments))
-                                      @foreach($comments as $c)
                                         <div class="comment-main-level">
                                           <!-- Avatar -->
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$c->profile_pic}}" alt=""></div>
+                                          <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
                                           <!-- Contenedor del Comentario -->
                                           <div class="comment-box">
                                             <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$c->name}}</a></h6>
+                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
                                               <span>hace 20 minutos</span>
                                               <i class="fa fa-reply"></i>
                                               <i class="fa fa-heart"></i>
                                             </div>
                                             <div class="comment-content">
-                                              {{$c->comment}}
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
                                             </div>
                                           </div>
                                         </div>
-                                        @endforeach
-                                        @endIf
                                         <!-- Respuestas de los comentarios -->
                                         <ul class="comments-list reply-list">
                                           <li>
@@ -184,13 +171,6 @@
               </div>
             <!-- </div> -->
           </div>
-          <script>
-$(document).ready(function() {
-    $("#{{$p->id}}").click(function() {
-        $('#comment_{{$p->id}}').after("<div class='avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}'  width='30' class='avatar-photo'>	<form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><br><button type='submit'>Submit</button></form><br>");
-    });
-})
-</script> 
   			  @endforeach
   			@endif
       </section>
@@ -200,3 +180,10 @@ $(document).ready(function() {
 
 <!-- page script -->
 
+<script>
+$(document).ready(function() {
+    $("#comment").click(function() {
+        $('#comment_box').append("<form><input type='text' name='comment'><button type='submit'>Submit</button></form>");
+    });
+})
+</script> 
