@@ -54,10 +54,8 @@
                         <div class="item_body_head">
                           <div class="card">
                           <div class="dropdown settings">
-                              <i onclick="myFunction()" class="fa fa-ellipsis-h dropbtn"></i>
-                              <div id="myDropdown" class="dropdown-content">
-                                <a href="#home">Delete</a>
-                              </div>
+                              <i class="fa fa-trash"></i>
+                             
                             </div>
                             <div class="card-header user_image">
                               <img src="img/add.jpg">
@@ -181,7 +179,7 @@
 
 <!-- page script -->
 
-<script>
+<!-- <script>
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -198,4 +196,4 @@ window.onclick = function(event) {
     }
   }
 }
-</script>
+</script> -->

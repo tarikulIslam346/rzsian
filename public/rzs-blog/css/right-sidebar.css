@@ -32,3 +32,29 @@
     background-color: #284c79;
     color: #fff;
 }
+
+/* single page right side bar */
+
+.recent_post .recent_post_body{
+    overflow-y: scroll;
+   height: 400px;
+}
+.recent_post .card-body {
+    padding: 0;
+}
+.recent_post .card-header {
+    padding: .5rem 10px;
+    font-weight: 600;
+}
+
+.recent_post li{
+    padding: 5px;
+}
+
+.recent_post li a{
+    color: #000;
+}
+.recent_post li:hover{
+    background: rgba(29, 33, 41, .2);
+    color: #fff;
+}

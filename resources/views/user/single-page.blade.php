@@ -46,14 +46,14 @@
                   <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
                 </div>
                 <div class="card-footer text-muted">
-                <div class="item_body_footer">
-                  <div class="row">
-                    <div class="col-md-3">Like</div>
-                    <div class="col-md-3">Share</div>
-                    <div class="col-md-3">View</div>
-                    <div class="col-md-3">Comment</div>
-                  </div>
-                </div>
+                    <div class="item_body_footer">
+                      <div class="row">
+                        <div class="col-md-3 footer_element">Like<span>200</span></div>
+                        <div class="col-md-3 footer_element">Share<span>200</span></div>
+                        <div class="col-md-3 footer_element">View<span>200</span></div>
+                        <div class="col-md-3 footer_element">Comments<span>200</span></div>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="card-footer text-muted" style="background:gray; padding: 5px">
@@ -137,18 +137,37 @@
                     </div>
                   </div>
                 </div>
+
+                
              </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-    <div class="col-md-3">
-    <div class="mx-h-350" style="margin-top:40px;background-color: #000 ">
-	<a href=""><img src="img/add.jpg" style="width: 100%"></a>
-</div>
-    </div>
+    <div class="col-md-3 recent_post">
+      <div class="mx-h-350" style="margin-top:40px;">
+        <div class="card">
+          <div class="card-header">Other Recent Posts</div>
+            <div class="card-body ">
+              <ul class="recent_post_body">
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <a href=""><img src="img/add.jpg" style="width: 100%;margin-top:40px"></a>
   </div>
 </div>
 
