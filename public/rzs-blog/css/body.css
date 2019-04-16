@@ -110,6 +110,7 @@
     font-size: 18px;
     color: gray;
     z-index: 100000;
+    cursor: pointer;
 }
 .home_content_wrap .item_head img{
   width: 100%;
