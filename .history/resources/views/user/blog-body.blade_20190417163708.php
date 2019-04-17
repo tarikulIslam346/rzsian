@@ -184,15 +184,7 @@
                 });
             })
             </script> 
-            
-  
-    
-  			  @endforeach
-  			@endif
-      </section>
-  </div>
-</div>
-<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+            <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
   <script>
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
@@ -206,11 +198,19 @@
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
               alert(JSON.stringify(data));
-              // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-              document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-              document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              document.getElementById('comment_'+data.postId.to).after("<p>"+data.comment+"</p>");
+       
             });
           </script>
+            
+
+    
+  			  @endforeach
+  			@endif
+      </section>
+  </div>
+</div>
+
 
  
 

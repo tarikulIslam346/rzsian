@@ -207,8 +207,7 @@
             channel.bind('App\\Events\\CommentEvent', function(data) {
               alert(JSON.stringify(data));
               // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-              document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-              document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              document.getElementById('comment_'+data.postId).after("<div class='comments-container'></div><div class='comment-box'><div class='comment-head'></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
             });
           </script>
 

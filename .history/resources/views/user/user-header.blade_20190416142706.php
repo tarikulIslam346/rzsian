@@ -74,8 +74,12 @@
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
-              <div class="dropdown-menu dropdown-menu-right dropdown-cyan" id="comment_notification" aria-labelledby="navbarDropdownMenuLink-4">
-                  <a class="dropdown-item"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran comment on your post</a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran comment on your post</a>
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran comment on your post</a>
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran like on your post</a>
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran share on your post</a>
+                  <a class="dropdown-item" href="/logout_user"><i class="fa fa-bell" style="margin-right: 1%;"></i>Mohammad Imran comment on your post</a>
               </div>
           </li>
           <li class="nav-item dropdown">
