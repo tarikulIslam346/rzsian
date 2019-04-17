@@ -198,7 +198,7 @@
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
               alert(JSON.stringify(data));
-              getElementById('#comment_{{$p->id}}').after("<p>Ok append</p>");
+       
             });
           </script>
   			  @endforeach
