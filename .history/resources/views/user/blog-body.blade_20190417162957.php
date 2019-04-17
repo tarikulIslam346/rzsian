@@ -185,14 +185,7 @@
             })
             </script> 
             
-
-    
-  			  @endforeach
-  			@endif
-      </section>
-  </div>
-</div>
-<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
   <script>
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
@@ -207,9 +200,15 @@
             channel.bind('App\\Events\\CommentEvent', function(data) {
               alert(JSON.stringify(data));
               document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-       
+              document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
             });
           </script>
+    
+  			  @endforeach
+  			@endif
+      </section>
+  </div>
+</div>
 
  
 
