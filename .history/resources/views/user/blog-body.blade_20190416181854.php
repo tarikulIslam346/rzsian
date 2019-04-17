@@ -216,11 +216,10 @@ $(document).ready(function() {
 
     var pusher = new Pusher('41ac6612c4cdea6456be', {
       cluster: 'ap2',
-      forceTLS: true,
-      encrypted: true,
+      forceTLS: true
     });
 
-     var channel = pusher.subscribe('my-channel');
+    var channel = pusher.subscribe('status-liked');
     channel.bind('App\\Events\\CommentEvent', function(data) {
       alert(JSON.stringify(data));
     });

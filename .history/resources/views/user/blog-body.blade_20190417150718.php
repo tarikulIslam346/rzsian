@@ -221,7 +221,7 @@ $(document).ready(function() {
     });
 
      var channel = pusher.subscribe('my-channel');
-    channel.bind('App\\Events\\CommentEvent', function(data) {
+    channel.bind('my-event', function(data) {
       alert(JSON.stringify(data));
     });
   </script>

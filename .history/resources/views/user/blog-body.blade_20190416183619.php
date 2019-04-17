@@ -220,9 +220,9 @@ $(document).ready(function() {
       encrypted: true,
     });
 
-     var channel = pusher.subscribe('my-channel');
+    var channel = pusher.subscribe('status-liked');
     channel.bind('App\\Events\\CommentEvent', function(data) {
-      alert(JSON.stringify(data));
+      console.log('ok')
     });
   </script>
 

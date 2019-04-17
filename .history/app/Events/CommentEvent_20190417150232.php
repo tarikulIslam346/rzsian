@@ -13,16 +13,15 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class CommentEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $name;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct()
     {
-        $this->name = $name;
+        //
     }
 
     /**
@@ -32,6 +31,6 @@ class CommentEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-       return new Channel('my-channel');
+       return new Channel('status-liked');
     }
 }
