@@ -184,9 +184,7 @@
                 });
             })
             </script> 
-            
-  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
-  <script>
+             <script>
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
 
@@ -198,17 +196,18 @@
 
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
+              getElementById('#comment_{{$p->id}}').after("<p>Ok append</p>");
               alert(JSON.stringify(data));
-              document.getElementById('comment_{{$p->id}}').after("<p>Ok append</p>");
+          
             });
           </script>
-    
   			  @endforeach
   			@endif
       </section>
   </div>
 </div>
 
+  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
  
 
 

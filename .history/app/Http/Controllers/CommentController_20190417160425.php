@@ -15,7 +15,7 @@ class CommentController extends Controller
         'user_id' => $userId,
         'comment' => request('comment'),
        ]);
-       event(new CommentEvent(request('comment'),$postId));
+       event(new CommentEvent(request('comment')));
        return redirect('/user')->with('comment_create','successfully');
     }
 }
