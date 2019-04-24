@@ -156,23 +156,13 @@
                             
 
                             <div class="row">
-                              <div class="col-md-8">
+                              <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-user prefix"></i>
                                     <input type="text" id="modalLRInput15" class="form-control form-control-sm validate" name="name">
                                     <label data-error="wrong" data-success="right" for="modalLRInput15">Your Name</label>
                                 </div>
                               </div>
-                              <div class="col-md-4">
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fa fa-pencil prefix"></i>
-                                    <input type="number" id="registerBatch" class="form-control form-control-sm validate" name="batch">
-                                    <label data-error="wrong" data-success="right" for="registerBatch">SSC Batch</label>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="row">
                               <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-envelope prefix"></i>
@@ -180,11 +170,29 @@
                                     <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
                                 </div>
                               </div>
+                            </div>
+
+                            <div class="row">
                               <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
                                   <i class="fa fa-phone prefix"></i>
                                   <input type="number" id="registerMobile" class="form-control form-control-sm validate" name="phone">
                                   <label data-error="wrong" data-success="right" for="registerMobile">Your Phone No</label>
+                                </div>
+                              </div>
+                              
+                              <div class="col-md-3">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="number" id="registerBatch" class="form-control form-control-sm validate" name="batch">
+                                    <label data-error="wrong" data-success="right" for="registerBatch">Batch</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="text" id="registerBlood" class="form-control form-control-sm validate" name="blood">
+                                    <label data-error="wrong" data-success="right" for="registerBlood">Blood</label>
                                 </div>
                               </div>
                             </div>

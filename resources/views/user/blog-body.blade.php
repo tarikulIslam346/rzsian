@@ -29,7 +29,9 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input type="file" name="post_image" class="form-control-file" id="exampleInputFile">
+                          <img src="img/upload_image.png" id="upfile2" style="cursor:pointer; width:80px" />
+                          <p>Upload Picture</p>
+                          <input type="file" name="post_image" class="form-control-file" id="exampleInputFile" style="display:none">
                         </div>
                       </div>
                       <div class="col-md-6 post_submit_button">
@@ -184,9 +186,6 @@
                 });
             })
             </script> 
-            
-  
-    
   			  @endforeach
   			@endif
       </section>

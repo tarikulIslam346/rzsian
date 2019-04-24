@@ -203,6 +203,7 @@
 
 .home_content_wrap .post_submit_button{
   text-align: right;
+  margin: auto;
 }
 .home_content_wrap .post_submit_button .submit_button{
   border: none;
