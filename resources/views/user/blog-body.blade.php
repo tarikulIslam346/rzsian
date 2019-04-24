@@ -85,7 +85,7 @@
                                     <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
                                     <div class="col-md-3 footer_element">View<span>200</span></div>
-                                    <div class="col-md-3 footer_element"><button id="{{$p->id}}">Comments</button><span>200</span></div>
+                                    <div class="col-md-3 footer_element" id="{{$p->id}}">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
           <script>
             $(document).ready(function() {
                 $("#{{$p->id}}").click(function() {
-                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{$user->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button type='submit'>Submit</button></form></div></div></div></ul>");
+                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{$user->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
                    
                 });
             })

@@ -18,6 +18,7 @@
   <!-- Your custom styles (optional) -->
   <link href="rzs-blog/css/style.css" rel="stylesheet">
   <!-- <link href="css/style-dashboard.css" rel="stylesheet"> -->
+
 </head>
 
 <body>
@@ -36,6 +37,7 @@
   <script type="text/javascript" src="3rd-party/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="3rd-party/js/mdb.min.js"></script>
+  <script type="text/javascript" src="rzs-blog/js/script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('content')
   <!-- Start your project here-->
   <section id="_r_rzsian_home">
@@ -52,18 +53,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                   <div class="_r_rzsian_sitelogo_wrap">
                     <div class="_r_rzsian_sitelogo">
                       <img src="img/main_logo.png">
                     </div>
                   </div>
-                </div>
+                </div> -->
                 @else
                 <div class="col-md-12">
                   <div class="_r_rzsian_sitelogo_wrap">
                     <div class="_r_rzsian_sitelogo">
-                      <img src="img/main_logo.png">
+                      <!-- <img src="img/main_logo.png"> -->
                     </div>
                   </div>
                 </div>
@@ -71,8 +72,8 @@
                   <div class="_r_rzsian_allsite">
                        <a href="" data-toggle="modal" data-target=".modalLRForm">
                           <div class="_r_rzsian_site btn btn-default btn-rounded">
-                              <img src="img/rzs.png">
-                              <p>Login please</p>
+                              <!-- <img src="img/rzs.png"> -->
+                              <p>Login</p>
                           </div>
                         </a>
                   </div>
@@ -165,7 +166,7 @@
                               <div class="col-md-4">
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-pencil prefix"></i>
-                                    <input type="text" id="registerBatch" class="form-control form-control-sm validate" name="batch">
+                                    <input type="number" id="registerBatch" class="form-control form-control-sm validate" name="batch">
                                     <label data-error="wrong" data-success="right" for="registerBatch">SSC Batch</label>
                                 </div>
                               </div>
@@ -182,7 +183,7 @@
                               <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
                                   <i class="fa fa-phone prefix"></i>
-                                  <input type="text" id="registerMobile" class="form-control form-control-sm validate" name="phone">
+                                  <input type="number" id="registerMobile" class="form-control form-control-sm validate" name="phone">
                                   <label data-error="wrong" data-success="right" for="registerMobile">Your Phone No</label>
                                 </div>
                               </div>
@@ -205,10 +206,11 @@
                               </div>
                             </div>
 
-                            
-                             <div class="md-form form-sm mb-5">
-                                <i class="fa fa-image prefix"></i>
-                                <input type="file" id="modalLRInput16" class="form-control form-control-sm validate" name="profile_pic">
+                             <div class="md-form" style="text-align:center;margin-top: 0;">
+                                <!-- <i class="fa fa-image prefix"></i> -->
+                                <img src="img/pp.jpg" id="upfile1" style="cursor:pointer; width:80px" />
+                                <p>Upload Profile Picture</p>
+                                <input type="file" id="modalLRInput16" style="display:none" class="form-control form-control-sm validate" name="profile_pic">
                             </div>
 
                             <div class="text-center form-sm mt-2">
@@ -236,3 +238,4 @@
 </div>
 @endif
 @endsection
+

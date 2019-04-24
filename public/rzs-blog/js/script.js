@@ -28,5 +28,31 @@ jQuery(document).ready(function($) {
 	        $('.navbar').removeClass('fixed');
 	    }
 	});
+
+// for registration file upload          
+	$("#upfile1").click(function () {
+		$("#modalLRInput16").trigger('click');
+	});
+
+
+	function readURL(input) {
+
+		if (input.files && input.files[0]) {
+		  var reader = new FileReader();
+	  
+		  reader.onload = function(e) {
+			$('#upfile1').attr('src', e.target.result);
+		  }
+	  
+		  reader.readAsDataURL(input.files[0]);
+		}
+	  }
+	  
+	  $("#modalLRInput16").change(function() {
+		readURL(this);
+	  });
+
+
+
 });
 
