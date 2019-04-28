@@ -68,9 +68,9 @@
                               <i class="fa fa-trash"></i>
                             </div>
                             <div class="card-header user_image">
-                              <img src="/images/user_profile/{{$p->user->profile_pic}}">
+                              <img src="img/add.jpg">
                               <div class="col-md-10">
-                                <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
+                                <div class="item_body_title"><a href="/single-page"><p>{{$p->title}}</p></a></div>
                                 <div class="item_body_meta"><p>Posted by <span><a href="#">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
                               </div>
                             </div>

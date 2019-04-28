@@ -125,7 +125,7 @@
 .home_content_wrap .item_head {
     /* background: url(../../img/add.jpg); */
     /* background: url(../../img/title-image.png); */
-    /* background: url(../../uploads/postImages/'{{$p->post_image}}'); */
+    background: url(../../uploads/postImages/'{{$p->post_image}}');
     height: 300px;
     /* background-size: cover; */
     background-repeat: no-repeat;

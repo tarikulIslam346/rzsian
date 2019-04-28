@@ -23,6 +23,6 @@ class User extends Authenticatable
     }
 
       public function post(){
-        return $this->hasMany('App\Post','user_id','id');
+        return $this->belongsTo('App\Post','id','user_id');
     }
 }

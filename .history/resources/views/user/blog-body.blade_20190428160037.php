@@ -68,17 +68,17 @@
                               <i class="fa fa-trash"></i>
                             </div>
                             <div class="card-header user_image">
-                              <img src="/images/user_profile/{{$p->user->profile_pic}}">
+                              <img src="img/add.jpg">
                               <div class="col-md-10">
-                                <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
+                                <div class="item_body_title"><a href="/single-page"><p>{{$p->title}}</p></a></div>
                                 <div class="item_body_meta"><p>Posted by <span><a href="#">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
                               </div>
                             </div>
                             <div class="card-body">
                               <div class="item_body_content">
                                 <p>{{$p->post}}</p>
-                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');">
-                                  <!-- <img src="/uploads/postImages/{{$p->post_image}}"> -->
+                                <div class="item_head">
+                                  <!-- <img src="img/add.jpg"> -->
                                 </div>
                               </div>
                             </div>

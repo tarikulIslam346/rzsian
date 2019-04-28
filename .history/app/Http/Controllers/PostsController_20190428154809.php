@@ -9,6 +9,7 @@ use App\Post;
 class PostsController extends Controller
 {
     public  function store(Request $request){
+        dd(request()->all())
         Post::create($request->all());
         $post_id = Post::select('id')->latest()->first();
         if(request()->hasfile('post_image'))

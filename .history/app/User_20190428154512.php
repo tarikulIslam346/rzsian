@@ -22,7 +22,7 @@ class User extends Authenticatable
         return $this->belongsTo('App\Comment','id','user_id');
     }
 
-      public function post(){
-        return $this->hasMany('App\Post','user_id','id');
+    public function post(){
+        return $this->belongsTo('App\Post','id','user_id');
     }
 }

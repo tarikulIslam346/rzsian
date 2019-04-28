@@ -141,11 +141,18 @@
           <div class="card-header">Other Recent Posts</div>
             <div class="card-body ">
               <ul class="recent_post_body">
-              @if(isset($user))
-                @foreach($user->post as $p)
-                <li><a href="/single-page/{{$p->id}}">{{$p->title}}</a></li>
-                @endforeach
-                @endif
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
               </ul>
             </div>
           </div>

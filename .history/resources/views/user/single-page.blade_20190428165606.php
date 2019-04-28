@@ -142,8 +142,8 @@
             <div class="card-body ">
               <ul class="recent_post_body">
               @if(isset($user))
-                @foreach($user->post as $p)
-                <li><a href="/single-page/{{$p->id}}">{{$p->title}}</a></li>
+                @foreach($user as $u)
+                <li><a href="/single-page/{{$p->id}}">{{$u->post->title}}</a></li>
                 @endforeach
                 @endif
               </ul>

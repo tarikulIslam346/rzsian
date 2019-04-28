@@ -11,11 +11,11 @@ class PostsController extends Controller
     public  function store(Request $request){
         Post::create($request->all());
         $post_id = Post::select('id')->latest()->first();
-        if(request()->hasfile('post_image'))
+        if(request()->hasfile('file'))
         {
-            $file_name= time() . '_' .request()->file('post_image')->getClientOriginalName();
+            $file_name= time() . '_' .request()->file('file')->getClientOriginalName();
             try{
-                request()->file('post_image')->move(public_path().'/uploads/postImages/', $file_name);
+                request()->file('file')->move(public_path().'/uploads/postImages/', $file_name);
                 Post::where('id',$post_id->id)->update([
                     'post_image' => $file_name
                 ]);

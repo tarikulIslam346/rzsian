@@ -16,7 +16,7 @@
           <!-- <i class="fa fa-ellipsis-h settings"></i> -->
           <div class="row single-page">
             <div class="col-md-12">
-              <div class="single-page-cover-image"  style=" background-image: url('../../uploads/postImages/{{$post->post_image}}');"></div>
+              <div class="single-page-cover-image"></div>
             </div>
             <div class="col-md-12">
              <div class="item_body">
@@ -24,16 +24,27 @@
                   <div class="row">
                     <!-- <img src="img/add.jpg"> -->
                     <div class="col-md-10">
-                      <div class="item_body_title"><p> {{$post->title}}</p></div>
+                      <div class="item_body_title"><a href="/single-page"><p>Post title</p></a></div>
                       <div class="item_body_meta">
-                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>,{{\Carbon\Carbon::parse($post->created_at)->format('F d ')}} <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
+                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>, 26 March 2019 <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
                         <p></p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="item_body_content">
-                  {{$post->post}}
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
+                  <p>Intrinsicly evolve progressive products vis-a-vis focused web services. Energistically target wireless solutions before backend niches. Distinctively impact ethical leadership and covalent value. Distinctively impact ethical leadership and covalent value.</p>
                 </div>
                 <div class="card-footer text-muted">
                     <div class="item_body_footer">
@@ -141,11 +152,18 @@
           <div class="card-header">Other Recent Posts</div>
             <div class="card-body ">
               <ul class="recent_post_body">
-              @if(isset($user))
-                @foreach($user->post as $p)
-                <li><a href="/single-page/{{$p->id}}">{{$p->title}}</a></li>
-                @endforeach
-                @endif
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
               </ul>
             </div>
           </div>

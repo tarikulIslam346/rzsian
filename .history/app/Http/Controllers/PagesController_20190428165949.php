@@ -26,8 +26,8 @@ class PagesController extends Controller
 
     public function details($post){
         $post = Post::find($post);
-        $user = User::where('id',$post->user->id)->first();
-        //$user = User::all();
+        //$user = User::where('id',$post->user->id)->first();
+        $user = User::all();
         return view('user.single-page',compact('post','user'));
     }
 }

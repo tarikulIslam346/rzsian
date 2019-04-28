@@ -26,7 +26,7 @@
                     <div class="col-md-10">
                       <div class="item_body_title"><p> {{$post->title}}</p></div>
                       <div class="item_body_meta">
-                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>,{{\Carbon\Carbon::parse($post->created_at)->format('F d ')}} <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
+                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>,{{\Carbon\Carbon::parse($p->created_at)->format('F d ')}} <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
                         <p></p>
                       </div>
                     </div>
@@ -141,11 +141,18 @@
           <div class="card-header">Other Recent Posts</div>
             <div class="card-body ">
               <ul class="recent_post_body">
-              @if(isset($user))
-                @foreach($user->post as $p)
-                <li><a href="/single-page/{{$p->id}}">{{$p->title}}</a></li>
-                @endforeach
-                @endif
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet</a></li>
               </ul>
             </div>
           </div>

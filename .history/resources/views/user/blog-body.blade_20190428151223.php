@@ -8,19 +8,18 @@
                <div class="item_body ">
                   <div class="item_body_head">
                     <div class="row user_image">
-                      <img  src="/images/user_profile/{{\Auth::user()->profile_pic}}">
+                      <img src="img/add.jpg">
                       <div class="col-md-10">
                         <div class="item_body_title"><p>{{\Auth::user()->name}}</p></div>
-                        <div class="item_body_meta"><p>{{\Carbon\Carbon::today()->format('Y-m-d')}}</p></div>
+                        <div class="item_body_meta"><p>26 March 2019</p></div>
                       </div>
                     </div>
                   </div>
-                  <form action="/post_create" method="POST" enctype="multipart/form-data">
+                  <form action="/post_create" method="POST">
   				        @csrf
                   <div class="item_body_content">
                     <div class="form-group">
                     <input class="form-control" placeholder="Post title" name="title" id="exampleTextarea">
-                    <input class="form-control" type="hidden" placeholder="Post title" name="user_id" value="{{\Auth::id()}}" id="exampleTextarea">
                   </div>
                    <div class="form-group">
                     <textarea class="form-control" placeholder="Write your post here...." name="post" id="exampleTextarea" rows="3"></textarea>
@@ -68,17 +67,17 @@
                               <i class="fa fa-trash"></i>
                             </div>
                             <div class="card-header user_image">
-                              <img src="/images/user_profile/{{$p->user->profile_pic}}">
+                              <img src="img/add.jpg">
                               <div class="col-md-10">
-                                <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
-                                <div class="item_body_meta"><p>Posted by <span><a href="#">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
+                                <div class="item_body_title"><a href="/single-page"><p>{{$p->title}}</p></a></div>
+                                <div class="item_body_meta"><p>Posted by <span><a href="#">Mohammad Imran</a></span>, 26 March 2019</p></div>
                               </div>
                             </div>
                             <div class="card-body">
                               <div class="item_body_content">
                                 <p>{{$p->post}}</p>
-                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');">
-                                  <!-- <img src="/uploads/postImages/{{$p->post_image}}"> -->
+                                <div class="item_head">
+                                  <!-- <img src="img/add.jpg"> -->
                                 </div>
                               </div>
                             </div>
