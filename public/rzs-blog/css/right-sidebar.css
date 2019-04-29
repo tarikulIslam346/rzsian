@@ -35,10 +35,18 @@
 
 /* single page right side bar */
 
+.recent_post{
+   padding-left: 0;
+   padding-right: 0;
+}
 .recent_post .recent_post_body{
     overflow-y: scroll;
    height: 400px;
 }
+.recent_post .recent_post_body .fa{
+   padding-right: 5%;
+}
+
 .recent_post .card-body {
     padding: 0;
 }
@@ -48,7 +56,7 @@
 }
 
 .recent_post li{
-    padding: 5px;
+    padding: 10px 20px 0;
 }
 
 .recent_post li a{
