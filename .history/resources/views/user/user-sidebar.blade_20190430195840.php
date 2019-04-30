@@ -53,14 +53,14 @@
             <div class="modal-body text-center mb-1">
                 <form action="/user_update/{{\Auth::id()}}" method="POST">
         					@csrf
-                  <!-- <div class="md-form ml-0 mr-0">
+                  <div class="md-form ml-0 mr-0">
                     <input type="text" name="name" id="edit_name" class="form-control form-control-sm validate ml-0">
                     <label data-error="wrong" data-success="right" for="edit_name" class="ml-0">Change Name</label>
                   </div>
                   <div class="md-form ml-0 mr-0">
                     <input type="text" name="email" id="edit_uName" class="form-control form-control-sm validate ml-0">
                     <label data-error="wrong" data-success="right" for="edit_uName" class="ml-0">Change Email</label>
-                  </div> -->
+                  </div>
                   <div class="md-form ml-0 mr-0">
                     <input type="password" name="password" id="edit_password" class="form-control form-control-sm validate ml-0">
                     <input type="hidden" name="name" value="{{\Auth::user()->name}}" id="edit_password" class="form-control form-control-sm validate ml-0">

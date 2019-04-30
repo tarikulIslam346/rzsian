@@ -16,23 +16,22 @@ class UserController extends Controller
         if (!is_null($name)) {
             $update_array['name'] = $name;
         }
-        if (!is_null($password) && !is_null($name)) {
-            $current_password = request('password');
-            if (auth()->attempt(request(['name','password']))){
-                $new_password = request('new_password');
-                $retype_password = request('retype_password');
-                if($new_password == $retype_password  )$update_array['password'] = bcrypt($new_password);
-                else  return redirect('/user')->with('user_update','password not match');
-            }else{
-                return redirect('/user')->with('user_update','password not match');
-            }
-
+        if (!is_null($password)) {
+            $current_password = request('current_password');
+            $new_password = request('password');
+            $retype_password = request('retype_password');
+            if($new_password == $retype_password  )$update_array['password'] = $password;
+            else  return redirect('/user')->with('user_update','password not match');
         }
         if (!is_null($email)) {
             $update_array['email'] = $email;
         }
-        User::where('id',$user_id)
-     	        ->update($update_array);
+     User::where('id',$user_id)
+     	->update([
+      	'name' => request('name'),
+      	'password' =>bcrypt(request('password')),
+      	'email' => request('email')
+      ]);
       return redirect('/user')->with('user_update','successfully');
     }
     public function getBatchdata($batch){

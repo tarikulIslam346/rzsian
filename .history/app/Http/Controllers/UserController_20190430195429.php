@@ -16,7 +16,7 @@ class UserController extends Controller
         if (!is_null($name)) {
             $update_array['name'] = $name;
         }
-        if (!is_null($password) && !is_null($name)) {
+        if (!is_null($password) && !is_null($password)) {
             $current_password = request('password');
             if (auth()->attempt(request(['name','password']))){
                 $new_password = request('new_password');

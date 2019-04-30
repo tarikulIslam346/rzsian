@@ -9,7 +9,7 @@ class SessionController extends Controller
     public function store(){
       	if (auth()->attempt(request(['name','password'])) && request('status') == 0){
           //$id = auth()->id();
-        	return redirect('/user'); 
+        	return redirect('/'); 
       	}
       	if (auth()->attempt(request(['name','password'])) && request('status') == 1){
         	return redirect('/admin'); 

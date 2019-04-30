@@ -24,18 +24,6 @@ class PagesController extends Controller
     		return view('home.index');
     	}
     } 
-    public function user_profile(){
-    	if(\Auth::check())
-    	{
-            $batch = User::select('batch')->distinct('batch')->get();
-            $post = Post::where('user_id',\Auth::id())->get();
-            $user_page = 1;
-            $profile_page=1;
-    		return view('user.index',compact('batch','post','comments','user_page','profile_page'));
-    	}else {
-    		return view('home.index');
-    	}
-    } 
 
     public function details($post){
         $post = Post::find($post);

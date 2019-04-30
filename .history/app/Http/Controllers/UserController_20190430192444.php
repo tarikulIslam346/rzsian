@@ -16,12 +16,12 @@ class UserController extends Controller
         if (!is_null($name)) {
             $update_array['name'] = $name;
         }
-        if (!is_null($password) && !is_null($name)) {
-            $current_password = request('password');
-            if (auth()->attempt(request(['name','password']))){
-                $new_password = request('new_password');
+        if (!is_null($password)) {
+            $current_password = request('current_password');
+            if (auth()->attempt(request($current_password))){
+                $new_password = request('password');
                 $retype_password = request('retype_password');
-                if($new_password == $retype_password  )$update_array['password'] = bcrypt($new_password);
+                if($new_password == $retype_password  )$update_array['password'] = bcrypt($password);
                 else  return redirect('/user')->with('user_update','password not match');
             }else{
                 return redirect('/user')->with('user_update','password not match');

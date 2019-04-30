@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <div class="row">
       <section style="width:100%">
-      @if(isset($user_page))
-      <div class="home_content_wrap">
+      @if(isset($batch_page))
+      @else
+        <div class="home_content_wrap">
           <div class="card">
             <div class="row write_blog">
               <div class="col-md-12">
@@ -47,8 +48,6 @@
             </div>
           </div>
         </div>
-      @else
-
       @endif
         @if(session('comment_create'))
         <div class="alert  alert-success fade show" role="alert">
