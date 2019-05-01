@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
       <section style="width:100%">
-      @if(isset($user_page))
+      <!-- @if(isset($user_page))
       <div class="home_content_wrap">
           <div class="card">
             <div class="row write_blog">
@@ -9,7 +9,11 @@
                <div class="item_body ">
                   <div class="item_body_head">
                     <div class="row user_image">
+                      @if(\Auth::user()->profile_pic)
                       <img  src="/images/user_profile/{{\Auth::user()->profile_pic}}">
+                      @else
+                      <img src="img/upload_image.png">
+                      @endif
                       <div class="col-md-10">
                         <div class="item_body_title"><p>{{\Auth::user()->name}}</p></div>
                         <div class="item_body_meta"><p>{{\Carbon\Carbon::today()->format('Y-m-d')}}</p></div>
@@ -49,7 +53,7 @@
         </div>
       @else
 
-      @endif
+      @endif -->
         @if(session('comment_create'))
         <div class="alert  alert-success fade show" role="alert">
            {{ session('comment_create') }} 
@@ -71,19 +75,26 @@
                           <div class="dropdown settings">
                               <i class="fa fa-trash"></i>
                             </div>
+                            @if($p->user)
                             <div class="card-header user_image">
+                            @if($p->user->profile_pic)
                               <img src="/images/user_profile/{{$p->user->profile_pic}}">
+                              @else
+                              <img src="/images/upload_image/pp.jpg">
+                              @endif
                               <div class="col-md-10">
                                 <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
                                 <div class="item_body_meta"><p>Posted by <span><a href="#">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
                               </div>
                             </div>
+                            @endif
                             <div class="card-body">
                               <div class="item_body_content">
                                 <p>{{$p->post}}</p>
-                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');">
-                                  <!-- <img src="/uploads/postImages/{{$p->post_image}}"> -->
-                                </div>
+                                @if($p->post_image)
+                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');"></div>
+                              @else
+                              @endif
                               </div>
                             </div>
                             <div class="card-footer text-muted">
@@ -107,7 +118,13 @@
                                          @php
                                          $user = \App\User::where('id',$c->user_id)->first();
                                          @endphp
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$user->profile_pic}}" alt=""></div>
+                                          <div class="comment-avatar">
+                                          @if($user->profile_pic)
+                                            <img src="/images/user_profile/{{$user->profile_pic}}" alt="">
+                                            @else
+                                            <img src="/images/user_profile/abc.jpg">
+                                            @endif
+                                          </div>
                                           <div class="comment-box">
                                             <div class="comment-head">
                                               <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
@@ -138,7 +155,7 @@
           <script>
             $(document).ready(function() {
                 $("#{{$p->id}}").click(function() {
-                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{$user->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
+                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
                    
                 });
             })

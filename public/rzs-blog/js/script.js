@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
 	// sidebar menu icon
 	$('.menu-icon').on('click', function(){
 		$(this).toggleClass('open');
@@ -30,7 +31,7 @@ jQuery(document).ready(function($) {
 	});
 
 // for registration file upload          
-	$("#upfile1").click(function () {
+	$("#upfile").click(function () {
 		$("#modalLRInput16").trigger('click');
 	});
 
@@ -41,7 +42,7 @@ jQuery(document).ready(function($) {
 		  var reader = new FileReader();
 	  
 		  reader.onload = function(e) {
-			$('#upfile1').attr('src', e.target.result);
+			$('#upfile').attr('src', e.target.result);
 		  }
 	  
 		  reader.readAsDataURL(input.files[0]);

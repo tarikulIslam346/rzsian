@@ -161,7 +161,8 @@
 }
 
 .home_content_wrap .item_body .item_body_head .card-body {
-    min-height: 97px;
+    /* min-height: 97px; */
+    padding: 1.25rem 1.25rem 0;
 }
 
 .home_content_wrap .item_body .item_body_head .item_body_title p {

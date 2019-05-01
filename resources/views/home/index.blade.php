@@ -216,7 +216,7 @@
 
                              <div class="md-form" style="text-align:center;margin-top: 0;">
                                 <!-- <i class="fa fa-image prefix"></i> -->
-                                <img src="img/pp.jpg" id="upfile1" style="cursor:pointer; width:80px" />
+                                <img src="img/pp.jpg" id="upfile" style="cursor:pointer; width:80px" />
                                 <p>Upload Profile Picture</p>
                                 <input type="file" id="modalLRInput16" style="display:none" class="form-control form-control-sm validate" name="profile_pic">
                             </div>

@@ -9,7 +9,11 @@
                <div class="item_body ">
                   <div class="item_body_head">
                     <div class="row user_image">
+                      @if(\Auth::user()->profile_pic)
                       <img  src="/images/user_profile/{{\Auth::user()->profile_pic}}">
+                      @else
+                      <img src="/images/user_profile/abc.jpg">
+                      @endif
                       <div class="col-md-10">
                         <div class="item_body_title"><p>{{\Auth::user()->name}}</p></div>
                         <div class="item_body_meta"><p>{{\Carbon\Carbon::today()->format('Y-m-d')}}</p></div>
@@ -80,10 +84,11 @@
                             </div>
                             <div class="card-body">
                               <div class="item_body_content">
-                                <p>{{$p->post}}</p>
-                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');">
-                                  <!-- <img src="/uploads/postImages/{{$p->post_image}}"> -->
-                                </div>
+                              <p>{{$p->post}}</p>
+                                @if($p->post_image)
+                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');"></div>
+                              @else
+                              @endif
                               </div>
                             </div>
                             <div class="card-footer text-muted">
@@ -138,7 +143,7 @@
           <script>
             $(document).ready(function() {
                 $("#{{$p->id}}").click(function() {
-                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{$user->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
+                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
                    
                 });
             })

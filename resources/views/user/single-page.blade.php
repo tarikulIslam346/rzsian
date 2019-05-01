@@ -16,7 +16,10 @@
           <!-- <i class="fa fa-ellipsis-h settings"></i> -->
           <div class="row single-page">
             <div class="col-md-12">
+            @if($post->post_image)
               <div class="single-page-cover-image"  style=" background-image: url('../../uploads/postImages/{{$post->post_image}}');"></div>
+            @else
+            @endif
             </div>
             <div class="col-md-12">
              <div class="item_body">

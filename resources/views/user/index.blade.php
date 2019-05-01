@@ -18,7 +18,6 @@
         </div>                   
        @endif  
 		<div>
-			<!-- <div class="min-height-200px"> -->
 				<div class="row clearfix">
 					<div class="col-md-2 _r_left_side">
 						@include('user.user-sidebar')
@@ -36,8 +35,12 @@
 					            <div class="card">
 					                <canvas class="header-bg" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
+									@if($u->profile_pic)
 					                    <img class="card-img-top" src="images/user_profile/{{$u->profile_pic}}" alt="Card image">
-					                </div>
+									@else
+									<img src="/images/user_profile/abc.jpg">
+									@endif
+									</div>
 					                <div class="content">
 					                    <p>{{$u->name}} <br>
 					                       </p>
@@ -46,21 +49,13 @@
 					                </div>
 					            </div>
 							</div>
-								<!--Modal: Login with Avatar Form-->
-						    
 							<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-							        <!--Content-->
 							        <div class="modal-content">
-							            <!--Header-->
-							            <div class="modal-header d-flex">
-							            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							                    <span aria-hidden="true">&times;</span>
-							                </button>
-											<img src="images/user_profile/{{$u->profile_pic}}" alt="avatar" class="rounded-circle img-responsive">
-							            </div>
-							            <!--Body-->
 							            <div class="modal-body text-center mb-1">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							                    <span aria-hidden="true" style="color:#000">&times;</span>
+							                </button>
 							                <h5>{{$u->name}}</h5>
 							                <p>{{$u->phone}}</p>
 							                <p>intoiit bangladesh LTD</p>
