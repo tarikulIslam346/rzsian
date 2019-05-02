@@ -10,8 +10,8 @@ use App\Events\CommentEvent;
 class CommentController extends Controller
 {
     public  function store(Request $request,$userId,$postId){
-       /*  if($request->ajax())
-        { */
+        if($request->ajax())
+        {
        Comment::create([
         'post_id' => $postId,
         'user_id' => $userId,
@@ -19,6 +19,6 @@ class CommentController extends Controller
        ]);
        event(new CommentEvent(request('comment'),$postId));
        return redirect('/user')->with('comment_create','successfully');
-      /*   } */
+        }
     }
 }

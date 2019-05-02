@@ -134,17 +134,17 @@
                                   </h6>
                                   </div>
                                   <div class='comment-content'>
-                                    <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
+                                    <!-- <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> -->
                                       <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
                                       <input type='text' name='comment' id="comment">
                                       <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
-                                    </form>
+                                    <!-- </form> -->
                                   </div>
                                   </div>
                                   </div>
                               </ul>
                             </div>
-                        <!--     <script>
+                            <script>
                                 $(document).ready(function(){
                                   $('#submit').on('submit',function(){
                                     var comment = $('#comment').val();
@@ -160,7 +160,7 @@
                                     })
                                   })
                                 });
-                              </script> -->
+                              </script>
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -230,7 +230,7 @@
 
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
-              // alert(JSON.stringify(data));
+              alert(JSON.stringify(data));
               // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
               document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
               document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
