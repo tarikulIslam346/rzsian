@@ -30,6 +30,28 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	$("#upfile").click(function () {
+		$("#modalLRInput16").trigger('click');
+	});
+
+
+	function readURL1(input) {
+
+		if (input.files && input.files[0]) {
+		  var reader = new FileReader();
+	  
+		  reader.onload = function(e) {
+			$('#upfile').attr('src', e.target.result);
+		  }
+	  
+		  reader.readAsDataURL(input.files[0]);
+		}
+	  }
+	  
+	  $("#modalLRInput16").change(function() {
+		readURL1(this);
+	  });
+
 
 		// for post image file upload          
 	$("#upfile2").click(function () {
@@ -55,27 +77,7 @@ jQuery(document).ready(function($) {
 		});
 		
 			// for post image file upload          
-	$("#upfile").click(function () {
-		$("#modalLRInput16").trigger('click');
-	});
-
-
-	function readURL(input) {
-
-		if (input.files && input.files[0]) {
-		  var reader = new FileReader();
-	  
-		  reader.onload = function(e) {
-			$('#upfile').attr('src', e.target.result);
-		  }
-	  
-		  reader.readAsDataURL(input.files[0]);
-		}
-	  }
-	  
-	  $("#modalLRInput16").change(function() {
-		readURL(this);
-	  });
+	
 
 
 });

@@ -19,6 +19,6 @@
 	</div>
 	</div>
 </div>
-<div class="mx-h-350" style="margin-top:40px;background-color: #000 ">
+<!-- <div class="mx-h-350" style="margin-top:40px;background-color: #000 ">
 	<a href=""><img src="img/add.jpg" style="width: 100%"></a>
-</div>
+</div> -->

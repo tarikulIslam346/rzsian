@@ -221,6 +221,8 @@
                                 <input type="file" id="modalLRInput16" style="display:none" class="form-control form-control-sm validate" name="profile_pic">
                             </div>
 
+                             
+
                             <div class="text-center form-sm mt-2">
                                 <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
                             </div>

@@ -25,16 +25,6 @@
              <div class="item_body">
                 <div class="item_body_head">
                   <div class="row">
-                  <div class="col-md-12">
-                  @if($post->user->profile_pic)
-                      <img src="/images/user_profile/{{$post->user->profile_pic}}" style="width:80px">
-                      @else
-                      <img src="/images/upload_image/pp.jpg">
-                      @endif
-                      <p>{{$post->user->name}}</p>
-                      <p>SSC Batch :{{$post->user->batch}}</p>
-                      
-                    </div>
                     <!-- <img src="img/add.jpg"> -->
                     <div class="col-md-12">
                       <div class="item_body_title"><p> {{$post->title}}</p></div>
@@ -59,87 +49,8 @@
                     </div>
                 </div>
 
-                <div class="card-footer text-muted" style="background:gray; padding: 5px">
-                  <div class="item_body_footer">
-                    <div class="comments-container">
-                      <ul id="comments-list" class="comments-list">
-                        <li>
-                          <div class="comment-main-level">
-                            <!-- Avatar -->
-                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                            <!-- Contenedor del Comentario -->
-                            <div class="comment-box" style="width: 90%;">
-                              <div class="comment-head">
-                                <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-                                <span>hace 20 minutos</span>
-                                <i class="fa fa-reply"></i>
-                                <i class="fa fa-heart"></i>
-                              </div>
-                              <div class="comment-content">
-                                sapiente distinctio illo?
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Respuestas de los comentarios -->
-                          <ul class="comments-list reply-list">
-                            <li>
-                              <!-- Avatar -->
-                              <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                              <!-- Contenedor del Comentario -->
-                              <div class="comment-box" style="width: 90%;">
-                                <div class="comment-head">
-                                  <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-                                  <span>hace 10 minutos</span>
-                                  <i class="fa fa-reply"></i>
-                                  <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                              </div>
-                            </li>
+<!-- comment show here -->
 
-                            <li>
-                              <!-- Avatar -->
-                              <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                              <!-- Contenedor del Comentario -->
-                              <div class="comment-box" style="width: 90%;">
-                                <div class="comment-head">
-                                  <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-                                  <span>hace 10 minutos</span>
-                                  <i class="fa fa-reply"></i>
-                                  <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="comment-content">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li>
-                          <div class="comment-main-level">
-                            <!-- Avatar -->
-                            <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                            <!-- Contenedor del Comentario -->
-                            <div class="comment-box" style="width: 90%;">
-                              <div class="comment-head">
-                                <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-                                <span>hace 10 minutos</span>
-                                <i class="fa fa-reply"></i>
-                                <i class="fa fa-heart"></i>
-                              </div>
-                              <div class="comment-content">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
              </div>
             </div>
           </div>
@@ -149,7 +60,15 @@
     <div class="col-md-3 recent_post">
       <div class="mx-h-350" style="margin-top:40px;">
         <div class="card">
-          <div class="card-header">{{$post->user->name}}'s Other Posts</div>
+          <div class="card-header">
+            <h5>{{$post->user->name}}'s Other Posts</h5>
+                  @if($post->user->profile_pic)
+                  <img src="/images/user_profile/{{$post->user->profile_pic}}">
+                  @else
+                  <img src="/images/user_profile/pp.jpg">
+                  @endif
+                  <p>SSC Batch: {{$post->user->batch}}</p>
+          </div>
             <div class="card-body ">
               <ul class="recent_post_body">
               @if(isset($user))
@@ -161,7 +80,9 @@
             </div>
           </div>
       </div>
-      <a href=""><img src="img/add.jpg" style="width: 100%;margin-top:40px"></a>
+      <a href="">
+        <img src="/img/add.jpg" style="width: 100%;margin-top:40px">
+      </a>
   </div>
   @endif
 </div>

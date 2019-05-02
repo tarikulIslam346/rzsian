@@ -89,7 +89,7 @@
                             @if($p->user->profile_pic)
                               <img src="/images/user_profile/{{$p->user->profile_pic}}">
                               @else
-                              <img src="/images/upload_image/pp.jpg">
+                              <img src="/images/user_profile/pp.jpg">
                               @endif
                               <div class="col-md-10">
                                 <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
@@ -99,7 +99,13 @@
                             @endif
                             <div class="card-body">
                               <div class="item_body_content">
-                                <p>{{$p->post}}</p>
+                                <!-- <p>{{$p->post}}</p> -->
+                                <p class="ArticleBody">
+                                    {{ str_limit(strip_tags($p->post), 200) }}
+                                    @if (strlen(strip_tags($p->post)) > 200)
+                                      ... <a href="/single-page/{{$p->id}}">Read More</a>
+                                    @endif
+                                </p>
                                 @if($p->post_image)
                                 <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');"></div>
                               @else

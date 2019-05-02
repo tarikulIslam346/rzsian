@@ -42,10 +42,10 @@
 									@endif
 									</div>
 					                <div class="content">
-					                    <p>{{$u->name}} <br>
-					                       </p>
+										<p>{{$u->name}} <br></p>
 					                    <p>
-					                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalLoginAvatar">Details</button></p>
+										<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalLoginAvatar">Details</button>
+									</p>
 					                </div>
 					            </div>
 							</div>
@@ -56,11 +56,10 @@
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							                    <span aria-hidden="true" style="color:#000">&times;</span>
 							                </button>
-							                <h5>{{$u->name}}</h5>
-							                <p>{{$u->phone}}</p>
-							                <p>intoiit bangladesh LTD</p>
-							                <p>Dhaka, Mirpur</p>
-							                <p>B+</p>
+							                <h5><i class="fa fa-user"></i> {{$u->name}}</h5>
+							                <p><i class="fa fa-envelope"></i> {{$u->email}}</p>
+							                <p><i class="fa fa-phone"></i> {{$u->phone}}</p>
+							                <p><i class="fa fa-tint"></i> {{$u->blood}}</p>
 							            </div>
 							      	 </div>
 							    	</div>

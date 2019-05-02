@@ -39,6 +39,16 @@
    padding-left: 0;
    padding-right: 0;
 }
+
+.recent_post .card-header{
+   display: grid;
+   text-align: center;
+}
+
+.recent_post .card-header img{
+    width: 125px;
+    margin: auto;
+}
 .recent_post .recent_post_body{
     overflow-y: scroll;
    height: 400px;

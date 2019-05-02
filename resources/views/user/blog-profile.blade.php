@@ -86,7 +86,11 @@
                             </div>
                             @endif
                             <div class="card-header user_image">
+                              @if($p->user->profile_pic)
                               <img src="/images/user_profile/{{$p->user->profile_pic}}">
+                              @else
+                              <img src="/images/user_profile/abc.jpg">
+                              @endif
                               <div class="col-md-10">
                                 <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
                                 <div class="item_body_meta"><p>Posted by <span><a href="#">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
@@ -94,7 +98,13 @@
                             </div>
                             <div class="card-body">
                               <div class="item_body_content">
-                              <p>{{$p->post}}</p>
+                              <!-- <p>{{$p->post}}</p> -->
+                              <p class="ArticleBody">
+                                  {{ str_limit(strip_tags($p->post), 200) }}
+                                  @if (strlen(strip_tags($p->post)) > 200)
+                                    ... <a href="/single-page/{{$p->id}}">Read More</a>
+                                  @endif
+                              </p>
                                 @if($p->post_image)
                                 <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');"></div>
                               @else
@@ -114,6 +124,36 @@
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
                             <div id="comment_{{$p->id}}"></div>
                                 <div class="item_body_footer">
+                                <div class='comments-container'>
+                              <ul id='comments-list' class='comments-list'>
+                                  <li>
+                                  <div class='comment-main-level'>
+                                  <div class='comment-avatar'>
+                                    @if(\Auth::user()->profile_pic)
+                                  <img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
+                                  @else
+                                  <img src="/images/user_profile/abc.jpg">
+                                  @endif
+                                  </div>
+                                  <div class='comment-box'>
+                                  <div class='comment-head'>
+                                    <h6 class='comment-name by-author'>
+                                    <a href='http://creaticode.com/blog'>{{\Auth::user()->name}} </a>
+                    
+                                    </h6>
+                                    <span class="comment_batch">{{\Auth::user()->batch}}</span>
+                                  </div>
+                                  <div class='comment-content'>
+                                    <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
+                                      <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
+                                      <input type='text' name='comment' id="comment">
+                                      <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
+                                    </form>
+                                  </div>
+                                  </div>
+                                  </div>
+                              </ul>
+                            </div>
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -122,7 +162,13 @@
                                          @php
                                          $user = \App\User::where('id',$c->user_id)->first();
                                          @endphp
-                                          <div class="comment-avatar"><img src="/images/user_profile/{{$user->profile_pic}}" alt=""></div>
+                                          <div class="comment-avatar">
+                                            @if($user->profile_pic)
+                                            <img src="/images/user_profile/{{$user->profile_pic}}" alt="">
+                                            @else
+                                            <img src="/images/user_profile/abc.jpg">
+                                            @endif
+                                          </div>
                                           <div class="comment-box">
                                             <div class="comment-head">
                                               <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
@@ -150,14 +196,14 @@
               </div>
             <!-- </div> -->
           </div>
-          <script>
+          <!-- <script>
             $(document).ready(function() {
                 $("#{{$p->id}}").click(function() {
                   $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
                    
                 });
             })
-            </script> 
+            </script>  -->
   			  @endforeach
   			@endif
       </section>
@@ -176,7 +222,7 @@
 
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
-              alert(JSON.stringify(data));
+              // alert(JSON.stringify(data));
               // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
               document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
               document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
