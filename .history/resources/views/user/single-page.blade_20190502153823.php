@@ -27,7 +27,7 @@
                   <div class="row">
                   <div class="col-md-12">
                   @if($post->user->profile_pic)
-                      <img src="/images/user_profile/{{$post->user->profile_pic}}" style="width:80px">
+                      <img src="/images/user_profile/{{$post->user->profile_pic}}">
                       @else
                       <img src="/images/upload_image/pp.jpg">
                       @endif

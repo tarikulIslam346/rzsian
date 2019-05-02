@@ -112,7 +112,7 @@
                                     <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
                                     <div class="col-md-3 footer_element">View<span>200</span></div>
-                                    <div class="col-md-3 footer_element">Comments<span>200</span></div>
+                                    <div class="col-md-3 footer_element" id="{{$p->id}}">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>

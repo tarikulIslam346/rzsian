@@ -18,11 +18,9 @@
             <div class="title">
                 <a target="_blank" href="https://scripteden.com/">{{\Auth::user()->name}}</a>
             </div>
-            <div class="desc">{{\Auth::user()->email}}</div>
-            <div class="desc">{{\Auth::user()->phone}}</div>
-            @if(\Auth::user()->blood)
-            <div class="desc">{{\Auth::user()->blood}}</div>
-            @endif
+            <div class="desc">Passionate designer</div>
+            <div class="desc">Curious developer</div>
+            <div class="desc">Tech geek</div>
         </div>
         <!-- do not delete -->
         <!-- <div class="bottom">

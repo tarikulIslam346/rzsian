@@ -64,12 +64,13 @@
        @endif 
         @if(session('post_delete'))
         <div class="alert  alert-success fade show" role="alert">
-           Post deleted{{ session('post_delete') }} 
+           {{ session('post_delete') }} 
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>                   
        @endif 
+
         
         @if(isset($post))
   		  	@foreach($post as $p)
@@ -112,42 +113,13 @@
                                     <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
                                     <div class="col-md-3 footer_element">View<span>200</span></div>
-                                    <div class="col-md-3 footer_element">Comments<span>200</span></div>
+                                    <div class="col-md-3 footer_element" id="{{$p->id}}">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
                             <div id="comment_{{$p->id}}"></div>
                                 <div class="item_body_footer">
-
-<div class='comments-container'>
-<ul id='comments-list' class='comments-list'>
-<li><div class='comment-main-level'>
-<div class='comment-avatar'>
-<img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
-</div>
-<div class='comment-box'>
-<div class='comment-head'>
-<h6 class='comment-name by-author'>
-<a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a>
-</h6>
-</div>
-<div class='comment-content'>
-<form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
-<input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
-<input type='text' name='comment'>
-<button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button>
-</form>
-</div>
-</div>
-</div>
-</ul>
-</div>
-
-
-
-
-
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -190,15 +162,14 @@
               </div>
             <!-- </div> -->
           </div>
-          <!-- <script>
+          <script>
             $(document).ready(function() {
                 $("#{{$p->id}}").click(function() {
-                  $('#comment_{{$p->id}}').after("
-                  <div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
+                  $('#comment_{{$p->id}}').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
                    
                 });
             })
-            </script>  -->
+            </script> 
   			  @endforeach
   			@endif
       </section>

@@ -26,13 +26,8 @@
                 <div class="item_body_head">
                   <div class="row">
                   <div class="col-md-12">
-                  @if($post->user->profile_pic)
-                      <img src="/images/user_profile/{{$post->user->profile_pic}}" style="width:80px">
-                      @else
-                      <img src="/images/upload_image/pp.jpg">
-                      @endif
-                      <p>{{$post->user->name}}</p>
-                      <p>SSC Batch :{{$post->user->batch}}</p>
+                      <img src="">
+                      <p></p>
                       
                     </div>
                     <!-- <img src="img/add.jpg"> -->

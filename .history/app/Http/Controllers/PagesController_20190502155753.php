@@ -17,7 +17,7 @@ class PagesController extends Controller
     	if(\Auth::check())
     	{
             $batch = User::select('batch')->distinct('batch')->get();
-            $post = Post::orderBy('created_at','desc')->get();
+            $post = Post::all()->latest();
             $user_page = 1;
     		return view('user.index',compact('batch','post','comments','user_page'));
     	}else {
@@ -28,7 +28,7 @@ class PagesController extends Controller
     	if(\Auth::check())
     	{
             $batch = User::select('batch')->distinct('batch')->get();
-            $post = Post::where('user_id',\Auth::id())->orderBy('created_at','desc')->get();
+            $post = Post::where('user_id',\Auth::id())->get();
             $user_page = 1;
             $profile_page=1;
     		return view('user.index',compact('batch','post','comments','user_page','profile_page'));

@@ -26,7 +26,6 @@ class PostsController extends Controller
         }
         return redirect('/user')->with('post_create','successfully');
     }
-    
     public  function delete_post($post){
         $post= Post::find($post);
         $post->delete();

@@ -18,11 +18,9 @@
             <div class="title">
                 <a target="_blank" href="https://scripteden.com/">{{\Auth::user()->name}}</a>
             </div>
-            <div class="desc">{{\Auth::user()->email}}</div>
-            <div class="desc">{{\Auth::user()->phone}}</div>
-            @if(\Auth::user()->blood)
-            <div class="desc">{{\Auth::user()->blood}}</div>
-            @endif
+            <div class="desc">Passionate designer</div>
+            <div class="desc">Curious developer</div>
+            <div class="desc">Tech geek</div>
         </div>
         <!-- do not delete -->
         <!-- <div class="bottom">
@@ -70,14 +68,14 @@
                     <label data-error="wrong" data-success="right" for="edit_name" class="ml-0">Change Name</label>
                   </div>
                   <div class="md-form ml-0 mr-0">
-                    <input type="text" name="phone" id="phone" value="{{ old('phone', \Auth::user()->phone) }}" class="form-control form-control-sm validate ml-0">
+                    <input type="password" name="phone" id="phone" value="{{ old('phone', \Auth::user()->phone) }}" class="form-control form-control-sm validate ml-0">
                     <label data-error="wrong" data-success="right" for="phone" class="ml-0">Update Phone</label>
                   </div>
                   @if(\Auth::user()->blood)
                   <p>Blood Group : {{\Auth::user()->blood}} </p>
                   @else
                   <div class="md-form ml-0 mr-0">
-                    <input type="text" name="blood" id="blood" class="form-control form-control-sm validate ml-0">
+                    <input type="password" name="blood" id="blood" class="form-control form-control-sm validate ml-0">
                     <label data-error="wrong" data-success="right" for="blood" class="ml-0">Add Blood Group</label>
                   </div>
                   @endif
