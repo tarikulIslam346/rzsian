@@ -115,41 +115,43 @@
                             <div class="card-footer text-muted">
                                 <div class="item_body_footer">
                                   <div class="row">
-                                    <div class="col-md-3 footer_element">Like<span>200</span></div>
+                                    <!-- <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
-                                    <div class="col-md-3 footer_element">View<span>200</span></div>
+                                    <div class="col-md-3 footer_element">View<span>200</span></div> -->
                                     <div class="col-md-3 footer_element">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
-                            <div id="comment_{{$p->id}}"></div>
+                            
                                 <div class="item_body_footer">
 
-                            <div class='comments-container'>
-                              <ul id='comments-list' class='comments-list'>
-                                  <li>
-                                  <div class='comment-main-level'>
-                                  <div class='comment-avatar'>
-                                  <img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
-                                  </div>
-                                  <div class='comment-box'>
-                                  <div class='comment-head'>
-                                  <h6 class='comment-name by-author'>
-                                  <a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a>
-                                  </h6>
-                                  </div>
-                                  <div class='comment-content'>
-                                    <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
-                                      <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
-                                      <input type='text' name='comment' id="comment">
-                                      <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
-                                    </form>
-                                  </div>
-                                  </div>
-                                  </div>
-                              </ul>
-                            </div>
+                                <div class='comments-container'>
+                                  <ul id='comments-list' class='comments-list'>
+                                      <li>
+                                      <div class='comment-main-level'>
+                                      <div class='comment-avatar'>
+                                      <img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
+                                      </div>
+                                      <div class='comment-box'>
+                                      <div class='comment-head'>
+                                      <h6 class='comment-name by-author'>
+                                      <a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a>
+                                      </h6>
+                                      </div>
+                                      <div class='comment-content'>
+                                        <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
+                                          <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
+                                          <input type='text' name='comment' id="comment">
+                                          <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
+                                        </form>
+                                      </div>
+                                      </div>
+                                      </div>
+                                  </ul>
+                                </div>
+                                <div class="valo_lage_na" id="comment_{{$p->id}}"></div>
+                            
                         <!--     <script>
                                 $(document).ready(function(){
                                   $('#submit').on('submit',function(){
@@ -195,8 +197,6 @@
                                           </div>
                                         </div>
                                       </li>
-
-                  
                                     </ul>
                                   </div>
                                   @endforeach
@@ -236,10 +236,17 @@
 
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
+
+
+              var d1 = document.getElementById('comment_'+data.postId);
+              d1.insertAdjacentHTML("afterend", "<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
+
+
               // alert(JSON.stringify(data));
               // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-              document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-              document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              // document.getElementById('comment_'+data.postId).append("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              // document.getElementById('comment_'+data.postId).append(data.comment);
+              // document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
             });
           </script>
 

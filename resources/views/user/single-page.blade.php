@@ -29,7 +29,7 @@
                     <div class="col-md-12">
                       <div class="item_body_title"><p> {{$post->title}}</p></div>
                       <div class="item_body_meta">
-                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>,{{\Carbon\Carbon::parse($post->created_at)->format('F d ')}} <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
+                        <p>Posted by <span><a href="#">{{$post->user->name}}</a></span>, {{\Carbon\Carbon::parse($post->created_at)->format('F d ')}} <span class="pull-right">Total view <i class="fa fa-eye" style="color: red;font-size: 16px;"></i> 500</span></p>
                         <p></p>
                       </div>
                     </div>
@@ -41,10 +41,10 @@
                 <div class="card-footer text-muted">
                     <div class="item_body_footer">
                       <div class="row">
-                        <div class="col-md-3 footer_element">Like<span>200</span></div>
+                        <!-- <div class="col-md-3 footer_element">Like<span>200</span></div>
                         <div class="col-md-3 footer_element">Share<span>200</span></div>
-                        <div class="col-md-3 footer_element">View<span>200</span></div>
-                        <div class="col-md-3 footer_element">Comments<span>200</span></div>
+                        <div class="col-md-3 footer_element">View<span>200</span></div> -->
+                        <div class="col-md-12 footer_element">Comments<span>200</span></div>
                       </div>
                     </div>
                 </div>

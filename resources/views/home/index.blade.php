@@ -136,7 +136,7 @@
                         <div class="modal-footer">
                             <div class="options text-center text-md-right mt-1">
                                 <!-- <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p> -->
-                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                <!-- <p>Forgot <a href="#" class="blue-text">Password?</a></p> -->
                             </div>
                             <!-- <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button> -->
                         </div>
@@ -156,19 +156,19 @@
                             
 
                             <div class="row">
-                              <div class="col-md-6">
+                              <div class="col-md-8">
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-user prefix"></i>
                                     <input type="text" id="modalLRInput15" class="form-control form-control-sm validate" name="name">
-                                    <label data-error="wrong" data-success="right" for="modalLRInput15">Your Name</label>
+                                    <label data-error="wrong" data-success="right" for="modalLRInput15">* Your Name</label>
                                 </div>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-4">
                                 <div class="md-form form-sm mb-5">
-                                    <i class="fa fa-envelope prefix"></i>
-                                    <input type="email" id="modalLRInput12" class="form-control form-control-sm validate" name="email">
-                                    <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
-                                </div>
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="number" id="registerBatch" class="form-control form-control-sm validate" name="batch" require>
+                                    <label data-error="wrong" data-success="right" for="registerBatch">* Batch</label>
+                                </div> 
                               </div>
                             </div>
 
@@ -176,25 +176,25 @@
                               <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
                                   <i class="fa fa-phone prefix"></i>
-                                  <input type="number" id="registerMobile" class="form-control form-control-sm validate" name="phone">
-                                  <label data-error="wrong" data-success="right" for="registerMobile">Your Phone No</label>
+                                  <input type="number" id="registerMobile" class="form-control form-control-sm validate" name="phone" require>
+                                  <label data-error="wrong" data-success="right" for="registerMobile">* Your Phone No</label>
                                 </div>
                               </div>
                               
-                              <div class="col-md-3">
+                              <div class="col-md-6">
                                 <div class="md-form form-sm mb-5">
-                                    <i class="fa fa-pencil prefix"></i>
-                                    <input type="number" id="registerBatch" class="form-control form-control-sm validate" name="batch">
-                                    <label data-error="wrong" data-success="right" for="registerBatch">Batch</label>
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="email" id="modalLRInput12" class="form-control form-control-sm validate" name="email">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput12">* Your email</label>
                                 </div>
                               </div>
-                              <div class="col-md-3">
+                              <!-- <div class="col-md-3">
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-pencil prefix"></i>
                                     <input type="text" id="registerBlood" class="form-control form-control-sm validate" name="blood">
                                     <label data-error="wrong" data-success="right" for="registerBlood">Blood</label>
                                 </div>
-                              </div>
+                              </div> -->
                             </div>
 
                             <div class="row">
@@ -202,14 +202,14 @@
                                 <div class="md-form form-sm mb-5">
                                     <i class="fa fa-lock prefix"></i>
                                     <input type="password" id="modalLRInput13" class="form-control form-control-sm validate" name="password">
-                                    <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                                    <label data-error="wrong" data-success="right" for="modalLRInput13">* Your password</label>
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="md-form form-sm mb-4">
                                     <i class="fa fa-lock prefix"></i>
                                     <input type="password" id="modalLRInput14" class="form-control form-control-sm validate" name="password_confirmation">
-                                    <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                                    <label data-error="wrong" data-success="right" for="modalLRInput14">* Repeat password</label>
                                 </div>
                               </div>
                             </div>

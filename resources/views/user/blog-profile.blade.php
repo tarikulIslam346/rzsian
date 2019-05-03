@@ -114,15 +114,15 @@
                             <div class="card-footer text-muted">
                                 <div class="item_body_footer">
                                   <div class="row">
-                                    <div class="col-md-3 footer_element">Like<span>200</span></div>
+                                    <!-- <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
-                                    <div class="col-md-3 footer_element">View<span>200</span></div>
-                                    <div class="col-md-3 footer_element" id="{{$p->id}}">Comments<span>200</span></div>
+                                    <div class="col-md-3 footer_element">View<span>200</span></div> -->
+                                    <div class="col-md-12 footer_element" id="{{$p->id}}">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
                             <div class="card-footer text-muted" style="background:gray; padding: 5px">
-                            <div id="comment_{{$p->id}}"></div>
+                            
                                 <div class="item_body_footer">
                                 <div class='comments-container'>
                               <ul id='comments-list' class='comments-list'>
@@ -154,6 +154,7 @@
                                   </div>
                               </ul>
                             </div>
+                            <div id="comment_{{$p->id}}"></div>
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -182,8 +183,6 @@
                                           </div>
                                         </div>
                                       </li>
-
-                  
                                     </ul>
                                   </div>
                                   @endforeach
@@ -222,10 +221,18 @@
 
             var channel = pusher.subscribe('my-channel');
             channel.bind('App\\Events\\CommentEvent', function(data) {
+
+
+              var d1 = document.getElementById('comment_'+data.postId);
+              d1.insertAdjacentHTML("afterend", "<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
+
+
+
+
               // alert(JSON.stringify(data));
               // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-              document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-              document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              // document.getElementById('comment_'+data.postId).after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              // document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
             });
           </script>
 

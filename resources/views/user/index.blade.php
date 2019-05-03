@@ -49,20 +49,21 @@
 					                </div>
 					            </div>
 							</div>
+
 							<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-							        <div class="modal-content">
-							            <div class="modal-body text-center mb-1">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							                    <span aria-hidden="true" style="color:#000">&times;</span>
-							                </button>
-							                <h5><i class="fa fa-user"></i> {{$u->name}}</h5>
-							                <p><i class="fa fa-envelope"></i> {{$u->email}}</p>
-							                <p><i class="fa fa-phone"></i> {{$u->phone}}</p>
-							                <p><i class="fa fa-tint"></i> {{$u->blood}}</p>
-							            </div>
-							      	 </div>
-							    	</div>
+									<div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+										<div class="modal-content">
+											<div class="modal-body text-center mb-1">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true" style="color:#000">&times;</span>
+												</button>
+												<h5><i class="fa fa-user"></i> {{$u->name}}</h5>
+												<p><i class="fa fa-envelope"></i> {{$u->email}}</p>
+												<p><i class="fa fa-phone"></i> {{$u->phone}}</p>
+												<p><i class="fa fa-tint"></i> {{$u->blood}}</p>
+											</div>
+										</div>
+									</div>
 								</div>
 								@endforeach
 								@endif
@@ -73,10 +74,11 @@
 					</div>
 				</div>
 			</div>
-			@include('user.footer')
 		</div>
 	</div>
 
  <script type="text/javascript" src="3rd-party/js/mdb.min.js"></script>
 </body>
 </html>
+
+							
