@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {      
     public function store(){
-      	if (auth()->attempt(request(['name','password'])) && request('status') == 0){
+      	if (auth()->attempt(request(['phone','password'])) && request('status') == 0){
           //$id = auth()->id();
         	return redirect('/user'); 
       	}
-      	if (auth()->attempt(request(['name','password'])) && request('status') == 1){
+      	if (auth()->attempt(request(['phone','password'])) && request('status') == 1){
         	return redirect('/admin'); 
       	}
       	return back();

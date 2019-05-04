@@ -118,7 +118,7 @@
                                     <!-- <div class="col-md-3 footer_element">Like<span>200</span></div>
                                     <div class="col-md-3 footer_element">Share<span>200</span></div>
                                     <div class="col-md-3 footer_element">View<span>200</span></div> -->
-                                    <div class="col-md-3 footer_element">Comments<span>200</span></div>
+                                    <div class="col-md-12 footer_element">Comments<span>200</span></div>
                                   </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                                       <div class='comment-box'>
                                       <div class='comment-head'>
                                       <h6 class='comment-name by-author'>
-                                      <a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a>
+                                      <a href='/single-page/{{$p->id}}'>{{\Auth::user()->name}}</a>
                                       </h6>
                                       </div>
                                       <div class='comment-content'>
@@ -152,23 +152,7 @@
                                 </div>
                                 <div class="valo_lage_na" id="comment_{{$p->id}}"></div>
                             
-                        <!--     <script>
-                                $(document).ready(function(){
-                                  $('#submit').on('submit',function(){
-                                    var comment = $('#comment').val();
-                                    $.ajax({
-                                      url:"/comment/{{\Auth::id()}}/{{$p->id}}",
-                                      method:'POST',
-                                      data:{comment:comment},
-                                      dataType:'json',
-                                      success:function(msg)
-                                      {
-                                        alert(msg)
-                                      }
-                                    })
-                                  })
-                                });
-                              </script> -->
+                        
                                 @foreach($p->comments as $c)
                                   <div class="comments-container">
                                     <ul id="comments-list" class="comments-list">
@@ -186,10 +170,8 @@
                                           </div>
                                           <div class="comment-box">
                                             <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">{{$user->name}}</a></h6>
+                                              <h6 class="comment-name by-author"><a href="/single-page/{{$p->id}}">{{$user->name}}</a></h6>
                                               <span>{{$c->created_at->diffForHumans()}}</span>
-                                              <i class="fa fa-reply"></i>
-                                              <i class="fa fa-heart"></i>
                                             </div>
                                             <div class="comment-content">
                                               {{$c->comment}}
@@ -209,15 +191,7 @@
               </div>
             <!-- </div> -->
           </div>
-          <!-- <script>
-            $(document).ready(function() {
-                $("#{{$p->id}}").click(function() {
-                  $('#comment_{{$p->id}}').after("
-                  <div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'><img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'><a href='http://creaticode.com/blog'>{{\Auth::user()->name}}</a></h6></div><div class='comment-content'><form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'> <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' /><input type='text' name='comment'><button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' type='submit'>Submit</button></form></div></div></div></ul>");
-                   
-                });
-            })
-            </script>  -->
+         
   			  @endforeach
   			@endif
       </section>
@@ -249,6 +223,15 @@
               // document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
             });
           </script>
+
+<!-- <script>
+            $(document).ready(function() {
+               <button class="Show">Show</button>
+<button class="Hide">Hide</button>
+<button class="toggle">Show &amp; Hide</button>
+<div id="target"></div> 
+            })
+            </script> -->
 
  
 

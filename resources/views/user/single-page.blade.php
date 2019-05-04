@@ -5,7 +5,7 @@
 </head>
 <body>
   @include('user.user-header')
-  
+
 
 <div class="container">
 @if(isset($post))

@@ -117,8 +117,8 @@
                             <input type="hidden" name="status" value=0>
                             <div class="md-form form-sm mb-5">
                                 <i class="fa fa-user prefix"></i>
-                                <input type="text" id="modalLRInput10" class="form-control form-control-sm validate" name="name">
-                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your Name (not name may be phone no)</label>
+                                <input type="text" id="modalLRInput10" class="form-control form-control-sm validate" name="phone" placeholder="017********">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your phone no</label>
                             </div>
 
                             <div class="md-form form-sm mb-4">

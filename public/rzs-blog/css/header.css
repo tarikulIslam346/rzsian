@@ -35,10 +35,10 @@
 .manu_primary_middle .brand_logo img{
     position: absolute;
     z-index: 9999;
-    top: -35%;
-    left: 5%;
+    top: 10%;
+    left: 8%;
     border-radius: 50%;
-    width: 13%;
+    width: 8%;
     opacity: .7;
 }
 

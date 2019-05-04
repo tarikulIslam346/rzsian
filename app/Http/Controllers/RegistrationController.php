@@ -10,8 +10,9 @@ class RegistrationController extends Controller
     public function store(){
         $this->validate(request(),[
             'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'email' => 'email|unique:users',
+            'password' => 'required|confirmed|unique:users',
+            'phone' => 'required|confirmed|unique:users',
             'profile_pic' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
         $profile_pic ='';
@@ -33,6 +34,10 @@ class RegistrationController extends Controller
             'profile_pic' => $profile_pic,
             'password' => bcrypt(request('password'))
         ]);
-        return redirect('/')->with('registration','successfull');
+        if (auth()->attempt(request(['phone','password'])) && request('status') == 0){
+            //$id = auth()->id();
+              return redirect('/user')->with('registration','successfull'); 
+            }
+        // return redirect('/user')->with('registration','successfull');
     }      
 }

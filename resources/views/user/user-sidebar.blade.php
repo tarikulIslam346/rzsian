@@ -1,7 +1,7 @@
 <div class="left-side-deco">
     <div class="card hovercard">
     	<a href="modal" data-toggle="modal" data-target="#login-modal" class="edit-avatar btn btn-primary btn-twitter btn-sm">
-    		<i class="fa fa-edit"></i>
+    		<i class="fa fa-plus"></i>
     	</a>
 
         <div class="cardheader">
