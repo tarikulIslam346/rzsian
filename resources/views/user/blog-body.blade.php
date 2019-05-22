@@ -184,6 +184,8 @@
                                   @endforeach
                                 </div>
                             </div>
+
+                            <!-- comment -->
                           </div>
                         </div>
                     </div>
