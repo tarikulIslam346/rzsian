@@ -83,6 +83,9 @@
                           @if(\Auth::id() == $p->user->id)
                           <div class="dropdown settings">
                           <a href="/delete-post/{{$p->id}}"><i class="fa fa-trash"></i></a>
+                          <a href="modal" data-toggle="modal" data-target="#post-edit-modal">
+    		<i class="fa fa-edit"></i>
+    	</a>
                             </div>
                             @endif
                             <div class="card-header user_image">
@@ -208,6 +211,82 @@
       </section>
   </div>
 </div>
+
+
+
+<div class="modal fade" id="post-edit-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-lg" role="document">
+        <!--Content-->
+        <!-- <div class="modal-content"> -->
+            <!--Header-->
+            <div class="modal-header d-flex">
+            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+               
+
+            </div>
+            <!--Body-->
+            <!-- <div class="modal-body text-center mb-1"> -->
+            <div class="home_content_wrap">
+          <div class="card">
+            <div class="row write_blog">
+              <div class="col-md-12">
+               <div class="item_body ">
+                  <div class="item_body_head">
+                    <div class="row user_image">
+                      @if(\Auth::user()->profile_pic)
+                      <img  src="/images/user_profile/{{\Auth::user()->profile_pic}}">
+                      @else
+                      <img src="/images/user_profile/abc.jpg">
+                      @endif
+                      <div class="col-md-10">
+                        <div class="item_body_title"><p>{{\Auth::user()->name}}</p></div>
+                        <div class="item_body_meta"><p>{{\Carbon\Carbon::today()->format('Y-m-d')}}</p></div>
+                      </div>
+                    </div>
+                  </div>
+                  <form action="/post_create" method="POST" enctype="multipart/form-data">
+  				        @csrf
+                  <div class="item_body_content">
+                    <div class="form-group">
+                    <input class="form-control" placeholder="Post title" name="title" id="exampleTextarea">
+                    <input class="form-control" type="hidden" placeholder="Post title" name="user_id" value="{{\Auth::id()}}" id="exampleTextarea">
+                  </div>
+                   <div class="form-group">
+                    <textarea class="form-control" placeholder="Write your post here...." name="post" id="exampleTextarea" rows="3"></textarea>
+                  </div>
+                  </div>
+                  <div class="item_post_footer">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <img src="img/upload_image.png" id="upfile2" style="cursor:pointer; width:80px" />
+                          <p>Upload Picture</p>
+                          <input type="file" name="post_image" class="form-control-file" id="exampleInputFile" style="display:none">
+                        </div>
+                      </div>
+                      <div class="col-md-6 post_submit_button">
+                        <button class="submit_button btn btn-info btn-sm my-0 waves-effect waves-light" type="submit">submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- </div> -->
+      	 <!-- </div> -->
+    </div>
+</div>
+
+
+
+
+
+
 <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
   <script>
             // Enable pusher logging - don't include this in production

@@ -50,6 +50,72 @@
                 </div>
 
 <!-- comment show here -->
+<div class="card-footer text-muted" style="background:gray; padding: 5px">
+                            
+                                <div class="item_body_footer">
+
+<div class='comments-container'>
+                                  <ul id='comments-list' class='comments-list'>
+                                      <li>
+                                      <div class='comment-main-level'>
+                                      <div class='comment-avatar'>
+                                      <img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
+                                      </div>
+                                      <div class='comment-box'>
+                                      <div class='comment-head'>
+                                      <h6 class='comment-name by-author'>
+                                      <a href='/single-page/{{$post->id}}'>{{\Auth::user()->name}}</a>
+                                      </h6>
+                                      </div>
+                                      <div class='comment-content'>
+                                        <form method='POST'action='/comment/{{\Auth::id()}}/{{$post->id}}'>
+                                          <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
+                                          <input type='text' name='comment' id="comment">
+                                          <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
+                                        </form>
+                                      </div>
+                                      </div>
+                                      </div>
+                                  </ul>
+                                </div>
+
+
+<div class="valo_lage_na" id="comment_{{$post->id}}"></div>
+
+
+                                @foreach($post->comments as $c)
+                                  <div class="comments-container">
+                                    <ul id="comments-list" class="comments-list">
+                                      <li>
+                                        <div class="comment-main-level">
+                                         @php
+                                         $user = \App\User::where('id',$c->user_id)->first();
+                                         @endphp
+                                          <div class="comment-avatar">
+                                          @if($user->profile_pic)
+                                            <img src="/images/user_profile/{{$user->profile_pic}}" alt="">
+                                            @else
+                                            <img src="/images/user_profile/abc.jpg">
+                                            @endif
+                                          </div>
+                                          <div class="comment-box">
+                                            <div class="comment-head">
+                                              <h6 class="comment-name by-author"><a href="/single-page/{{$post->id}}">{{$user->name}}</a></h6>
+                                              <span>{{$c->created_at->diffForHumans()}}</span>
+                                            </div>
+                                            <div class="comment-content">
+                                              {{$c->comment}}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  @endforeach
+
+                                  </div>
+                            </div>
+<!-- comment show here -->
 
              </div>
             </div>
@@ -86,6 +152,33 @@
   </div>
   @endif
 </div>
+
+<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+  <script>
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('41ac6612c4cdea6456be', {
+              cluster: 'ap2',
+              forceTLS: true,
+              encrypted: true,
+            });
+
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('App\\Events\\CommentEvent', function(data) {
+
+
+              var d1 = document.getElementById('comment_'+data.postId);
+              d1.insertAdjacentHTML("afterend", "<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
+
+
+              // alert(JSON.stringify(data));
+              // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
+              // document.getElementById('comment_'+data.postId).append("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+              // document.getElementById('comment_'+data.postId).append(data.comment);
+              // document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
+            });
+          </script>
 
  <script type="text/javascript" src="3rd-party/js/mdb.min.js"></script>
 </body>
