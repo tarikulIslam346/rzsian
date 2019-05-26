@@ -1,20 +1,19 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
 	// sidebar menu icon
-	$('.menu-icon').on('click', function(){
+	$('.menu-icon').on('click', function () {
 		$(this).toggleClass('open');
 		$('.left-side-deco').toggleClass('open');
 	});
 
 	var w = $(window).width();
-	$(document).on('touchstart click', function(e){
-		if($(e.target).parents('.left-side-deco').length == 0 && !$(e.target).is('.menu-icon, .menu-icon span'))
-		{
+	$(document).on('touchstart click', function (e) {
+		if ($(e.target).parents('.left-side-deco').length == 0 && !$(e.target).is('.menu-icon, .menu-icon span')) {
 			$('.left-side-deco').removeClass('open');
 			$('.menu-icon').removeClass('open');
 		};
 	});
-	$(window).on('resize', function() {
+	$(window).on('resize', function () {
 		var w = $(window).width();
 		if ($(window).width() > 1200) {
 			$('.left-side-deco').removeClass('open');
@@ -22,12 +21,12 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-		$(window).bind('scroll', function () {
-	    if ($(window).scrollTop() > 5) {
-	        $('.navbar').addClass('fixed');
-	    } else {
-	        $('.navbar').removeClass('fixed');
-	    }
+	$(window).bind('scroll', function () {
+		if ($(window).scrollTop() > 5) {
+			$('.navbar').addClass('fixed');
+		} else {
+			$('.navbar').removeClass('fixed');
+		}
 	});
 
 	$("#upfile").click(function () {
@@ -38,22 +37,22 @@ jQuery(document).ready(function($) {
 	function readURL1(input) {
 
 		if (input.files && input.files[0]) {
-		  var reader = new FileReader();
-	  
-		  reader.onload = function(e) {
-			$('#upfile').attr('src', e.target.result);
-		  }
-	  
-		  reader.readAsDataURL(input.files[0]);
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#upfile').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
 		}
-	  }
-	  
-	  $("#modalLRInput16").change(function() {
+	}
+
+	$("#modalLRInput16").change(function () {
 		readURL1(this);
-	  });
+	});
 
 
-		// for post image file upload          
+	// for post image file upload          
 	$("#upfile2").click(function () {
 		$("#exampleInputFile").trigger('click');
 	});
@@ -62,22 +61,46 @@ jQuery(document).ready(function($) {
 	function readURL(input) {
 
 		if (input.files && input.files[0]) {
-		  var reader = new FileReader();
-	  
-		  reader.onload = function(e) {
-			$('#upfile2').attr('src', e.target.result);
-		  }
-	  
-		  reader.readAsDataURL(input.files[0]);
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#upfile2').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
 		}
-	  }
-	  
-	  $("#exampleInputFile").change(function() {
+	}
+
+	$("#exampleInputFile").change(function () {
 		readURL(this);
-		});
-		
-			// for post image file upload          
-	
+	});
+
+	// for post image file upload
+	// for post image file upload          
+	$("#edit_image").click(function () {
+		$("#editInputFile").trigger('click');
+	});
+
+
+	function readURL5(input) {
+
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#edit_image').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#editInputFile").change(function () {
+		readURL5(this);
+	});
+
+	// for post image file upload          
+
 
 
 });

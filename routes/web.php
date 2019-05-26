@@ -15,5 +15,6 @@ Route::get('/single-page/{post}','PagesController@details');
 
 
 Route::post('/post_create','PostsController@store');
+Route::post('/post_update','PostsController@post_update');
 Route::get('/delete-post/{post}','PostsController@delete_post');
 Route::post('/comment/{userId}/{postID}','CommentController@store');
