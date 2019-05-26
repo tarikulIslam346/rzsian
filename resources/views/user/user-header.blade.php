@@ -23,6 +23,24 @@
             </a> 
             
           </li>
+
+          <li class="nav-item dropdown rzs-menu-overlap">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others
+            </a>
+            <div class="dropdown-menu dropdown-default rzs-mega-menu" aria-labelledby="navbarDropdownMenuLink-3">
+               <ul class="mega-ul">
+                <li class="mega-li">
+                  <ul>
+                    <h5>Cricket</h5>
+                    <li><a href="">2017</a></li>
+                    <li><a href="">2018</a></li>
+                    <li><a href="">2019</a></li>
+                    <li><a href="">2020</a></li>
+                  </ul>
+                </li> 
+              </ul>
+            </div>
+          </li>
           
           
           <li class="nav-item">
@@ -116,39 +134,5 @@
 </div>
 
 <!-- dont delete -->
-<!-- <li class="nav-item dropdown rzs-menu-overlap">
-            <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others
-            </a>
-            <div class="dropdown-menu dropdown-default rzs-mega-menu" aria-labelledby="navbarDropdownMenuLink-3">
-               <ul class="mega-ul">
-                <li class="mega-li">
-                  <ul>
-                    <h5>Cricket</h5>
-                    <li><a href="">2017</a></li>
-                    <li><a href="">2018</a></li>
-                    <li><a href="">2019</a></li>
-                    <li><a href="">2020</a></li>
-                  </ul>
-                </li>
-                <li class="mega-li">
-                  <ul>
-                    <h5>Cricket</h5>
-                    <li><a href="">2017</a></li>
-                    <li><a href="">2018</a></li>
-                    <li><a href="">2019</a></li>
-                    <li><a href="">2020</a></li>
-                  </ul>
-                </li>
-                <li class="mega-li">
-                  <ul>
-                    <h5>Cricket</h5>
-                    <li><a href="">2017</a></li>
-                    <li><a href="">2018</a></li>
-                    <li><a href="">2019</a></li>
-                    <li><a href="">2020</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </li> -->
+
     

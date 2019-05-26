@@ -1,242 +1,235 @@
 <div class="container-fluid">
-  <div class="row">
-      <section style="width:100%">
-      <!-- @if(isset($user_page))
-      <div class="home_content_wrap">
-          <div class="card">
-            <div class="row write_blog">
-              <div class="col-md-12">
-               <div class="item_body ">
-                  <div class="item_body_head">
-                    <div class="row user_image">
-                      @if(\Auth::user()->profile_pic)
-                      <img  src="/images/user_profile/{{\Auth::user()->profile_pic}}">
-                      @else
-                      <img src="img/upload_image.png">
-                      @endif
-                      <div class="col-md-10">
-                        <div class="item_body_title"><p>{{\Auth::user()->name}}</p></div>
-                        <div class="item_body_meta"><p>{{\Carbon\Carbon::today()->format('Y-m-d')}}</p></div>
-                      </div>
+    <div class="row">
+        <section style="width:100%">
+            <!-- carosel -->
+            <div id="team" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#team" data-slide-to="0" class="active"></li>
+                    <li data-target="#team" data-slide-to="1"></li>
+                    <li data-target="#team" data-slide-to="2"></li>
+                </ul>
+
+                <div class="carousel-inner" style="height: 300px;">
+                    <div class="carousel-item active">
+                        <img src="img/mobile_back.jpg" alt="Los Angeles" width="1100" height="500">
                     </div>
-                  </div>
-                  <form action="/post_create" method="POST" enctype="multipart/form-data">
-  				        @csrf
-                  <div class="item_body_content">
-                    <div class="form-group">
-                    <input class="form-control" placeholder="Post title" name="title" id="exampleTextarea">
-                    <input class="form-control" type="hidden" placeholder="Post title" name="user_id" value="{{\Auth::id()}}" id="exampleTextarea">
-                  </div>
-                   <div class="form-group">
-                    <textarea class="form-control" placeholder="Write your post here...." name="post" id="exampleTextarea" rows="3"></textarea>
-                  </div>
-                  </div>
-                  <div class="item_post_footer">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <img src="img/upload_image.png" id="upfile2" style="cursor:pointer; width:80px" />
-                          <p>Upload Picture</p>
-                          <input type="file" name="post_image" class="form-control-file" id="exampleInputFile" style="display:none">
-                        </div>
-                      </div>
-                      <div class="col-md-6 post_submit_button">
-                        <button class="submit_button btn btn-info btn-sm my-0 waves-effect waves-light" type="submit">submit</button>
-                      </div>
+                    <div class="carousel-item">
+                        <img src="img/mobile_back.jpg" alt="Los Angeles" width="1100" height="500">
                     </div>
-                  </div>
-                </form>
-               </div>
-              </div>
+                    <div class="carousel-item">
+                        <img src="img/mobile_back.jpg" alt="Los Angeles" width="1100" height="500">
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#team" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#team" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
             </div>
-          </div>
-        </div>
-      @else
-
-      @endif -->
-        @if(session('comment_create'))
-        <div class="alert  alert-success fade show" role="alert">
-           {{ session('comment_create') }} 
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>                   
-       @endif 
-        @if(session('post_delete'))
-        <div class="alert  alert-success fade show" role="alert">
-           Post deleted{{ session('post_delete') }} 
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>                   
-       @endif 
-        
-        @if(isset($post))
-  		  	@foreach($post as $p)
-          <div class="home_content_wrap">
-              <div class="row">
-                <div class="col-md-12">
-                    <div class="item_body">
-                        <div class="item_body_head">
-                          <div class="card">
-                          @if(\Auth::id() == $p->user->id)
-                          <div class="dropdown settings">
-                          <a href="/delete-post/{{$p->id}}"><i class="fa fa-trash"></i></a>
-                            </div>
-                            @endif
-                            @if($p->user)
-                            <div class="card-header user_image">
-                            @if($p->user->profile_pic)
-                              <img src="/images/user_profile/{{$p->user->profile_pic}}">
-                              @else
-                              <img src="/images/user_profile/pp.jpg">
-                              @endif
-                              <div class="col-md-10">
-                                <div class="item_body_title"><a href="/single-page/{{$p->id}}"><p>{{$p->title}}</p></a></div>
-                                <div class="item_body_meta"><p>Posted by <span><a href="/single-page/{{$p->id}}">{{$p->user->name}}</a></span>, {{\Carbon\Carbon::parse($p->created_at)->format('F d ')}}</p></div>
-                              </div>
-                            </div>
-                            @endif
-                            <div class="card-body">
-                              <div class="item_body_content">
-                                <!-- <p>{{$p->post}}</p> -->
-                                <p class="ArticleBody">
-                                    {{ str_limit(strip_tags($p->post), 200) }}
-                                    @if (strlen(strip_tags($p->post)) > 200)
-                                      ... <a href="/single-page/{{$p->id}}">Read More</a>
-                                    @endif
-                                </p>
-                                @if($p->post_image)
-                                <div class="item_head" style=" background-image: url('../../uploads/postImages/{{$p->post_image}}');"></div>
-                              @else
-                              @endif
-                              </div>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <div class="item_body_footer">
-                                  <div class="row">
-                                    <!-- <div class="col-md-3 footer_element">Like<span>200</span></div>
-                                    <div class="col-md-3 footer_element">Share<span>200</span></div>
-                                    <div class="col-md-3 footer_element">View<span>200</span></div> -->
-                                    <div class="col-md-12 footer_element">Comments<span>200</span></div>
-                                  </div>
+            <!-- carosel -->
+            <!-- ficture -->
+            <div class="point-table">
+                <div class="card card--has-table">
+                    <header class="card__header">
+                        <h4 class="sp-table-caption">Tournament Ficture 2019</h4>
+                    </header>
+                    <div class="entry home-match-mini">
+                        <div class="entry-data">
+                            <div class="match-info">
+                                <div class="dateTime"><span class="date">October 9, 2017</span><span class="time">7:00 pm</span></div>
+                                <div class="team1 ">
+                                    <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/club_logo5.png);"></div>
+                                    <div class="name">Uventus</div>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team2 ">
+                                    <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/club_logo6.png);"></div>
+                                    <div class="name">Chalenger</div>
                                 </div>
                             </div>
-                            <div class="card-footer text-muted" style="background:gray; padding: 5px">
-                            
-                                <div class="item_body_footer">
-
-                                <div class='comments-container'>
-                                  <ul id='comments-list' class='comments-list'>
-                                      <li>
-                                      <div class='comment-main-level'>
-                                      <div class='comment-avatar'>
-                                      <img src='/images/user_profile/{{\Auth::user()->profile_pic}}' width='30'>
-                                      </div>
-                                      <div class='comment-box'>
-                                      <div class='comment-head'>
-                                      <h6 class='comment-name by-author'>
-                                      <a href='/single-page/{{$p->id}}'>{{\Auth::user()->name}}</a>
-                                      </h6>
-                                      </div>
-                                      <div class='comment-content'>
-                                        <form method='POST'action='/comment/{{\Auth::id()}}/{{$p->id}}'>
-                                          <input type='hidden' name='_token' id='csrf-token' value='{{ Session::token() }}' />
-                                          <input type='text' name='comment' id="comment">
-                                          <button class='submit_button btn btn-info btn-sm my-0 waves-effect waves-light' id="submit" type='submit'>Submit</button>
-                                        </form>
-                                      </div>
-                                      </div>
-                                      </div>
-                                  </ul>
-                                </div>
-                                <div class="valo_lage_na" id="comment_{{$p->id}}"></div>
-                            
-                        
-                                @foreach($p->comments as $c)
-                                  <div class="comments-container">
-                                    <ul id="comments-list" class="comments-list">
-                                      <li>
-                                        <div class="comment-main-level">
-                                         @php
-                                         $user = \App\User::where('id',$c->user_id)->first();
-                                         @endphp
-                                          <div class="comment-avatar">
-                                          @if($user->profile_pic)
-                                            <img src="/images/user_profile/{{$user->profile_pic}}" alt="">
-                                            @else
-                                            <img src="/images/user_profile/abc.jpg">
-                                            @endif
-                                          </div>
-                                          <div class="comment-box">
-                                            <div class="comment-head">
-                                              <h6 class="comment-name by-author"><a href="/single-page/{{$p->id}}">{{$user->name}}</a></h6>
-                                              <span>{{$c->created_at->diffForHumans()}}</span>
-                                            </div>
-                                            <div class="comment-content">
-                                              {{$c->comment}}
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  @endforeach
-                                </div>
-                            </div>
-
-                            <!-- comment -->
-                          </div>
                         </div>
                     </div>
                 </div>
-              </div>
-            <!-- </div> -->
-          </div>
-         
-  			  @endforeach
-  			@endif
-      </section>
-  </div>
+            </div>
+            <!-- ficture -->
+
+            <div class="cricket">
+                <div class="match-info">
+                    <div class="team1 new-design1">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo1.png);"></div>
+                        <div class="name">Uventus</div>
+                    </div>
+                    <div class="match-score">
+                        <div class="data team1">
+                            <div class="team1 win">122/9</div>
+                            <div class="vs">VS</div>
+                            <div class="team2 loss">110/10</div>
+                        </div>
+                    </div>
+                    <div class="team2 new-design2">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo2.png);"></div>
+                        <div class="name">Chalenger</div>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="team1 new-design1">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo1.png);"></div>
+                        <div class="name">Uventus</div>
+                    </div>
+                    <div class="match-score">
+                        <div class="data team1">
+                            <div class="team1 win">122/9</div>
+                            <div class="vs">VS</div>
+                            <div class="team2 loss">110/10</div>
+                        </div>
+                    </div>
+                    <div class="team2 new-design2">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo2.png);"></div>
+                        <div class="name">Chalenger</div>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="team1 new-design1">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo1.png);"></div>
+                        <div class="name">Uventus</div>
+                    </div>
+                    <div class="match-score">
+                        <div class="data team1">
+                            <div class="team1 win">122/9</div>
+                            <div class="vs">VS</div>
+                            <div class="team2 loss">110/10</div>
+                        </div>
+                    </div>
+                    <div class="team2 new-design2">
+                        <div class="logo" style="background-image: url(http://azexo.com/sportak/wp-content/uploads/2015/10/logo2.png);"></div>
+                        <div class="name">Chalenger</div>
+                    </div>
+                </div>
+            </div>
+            <!-- team point table -->
+            <div class="point-table">
+                <div class="card card--has-table">
+                    <header class="card__header">
+                        <h4 class="sp-table-caption">Team Point Table 2019</h4>
+                    </header>
+                    <div class="card__content">
+                        <div class="table-responsive sp-table-wrapper">
+                            <div class="sp-scrollable-table-wrapper">
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                                    <table class="table table-hover table-standings sp-league-table sp-data-table sp-sortable-table sp-scrollable-table sp-paginated-table dataTable no-footer" data-sp-rows="10" id="DataTables_Table_0" role="grid">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="data-rank sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Pos">Pos</th>
+                                                <th class="data-name sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Team">Team</th>
+                                                <th class="data-w sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="W">Match</th>
+                                                <th class="data-l sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="L">W</th>
+                                                <th class="data-t sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="T">L</th>
+                                                <th class="data-pct sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Pct">D</th>
+                                                <th class="data-pf sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="PF">P</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="highlighted sp-row-no-0 odd" role="row">
+                                                <td class="data-rank sp-highlight" data-label="Pos">1</td>
+                                                <td class="data-name has-logo sp-highlight" data-label="Team"><span class="team-logo"><img width="107" height="128" src="http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-107x128.png" class="attachment-sportspress-fit-icon size-sportspress-fit-icon wp-post-image" alt="" srcset="http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-107x128.png 107w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-252x300.png 252w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-768x916.png 768w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-859x1024.png 859w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-27x32.png 27w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-335x400.png 335w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-470x560.png 470w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-59x70.png 59w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-84x100.png 84w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1-600x715.png 600w, http://alchemists-wp.dan-fisher.com/football/wp-content/uploads/2018/01/team-alchemists-1.png 957w" sizes="(max-width: 107px) 100vw, 107px"></span>Alchemists</td>
+                                                <td class="data-w sp-highlight" data-label="W">14</td>
+                                                <td class="data-l sp-highlight" data-label="L">2</td>
+                                                <td class="data-t sp-highlight" data-label="T">0</td>
+                                                <td class="data-pct sp-highlight" data-label="Pct">1</td>
+                                                <td class="data-pf sp-highlight" data-label="PF">74</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- team point table -->
+
+
+
+            <div class="team-Player">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">TEAM MANAGER 2019</p>
+                                <a href="modal" data-toggle="modal" data-target="#playerDetails-modal" class="btn btn-primary">See profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">TEAM COACH 2019</p>
+                                <a href="modal" data-toggle="modal" data-target="#playerDetails-modal" class="btn btn-primary">See profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Left handed batsman</p>
+                                <a href="modal" data-toggle="modal" data-target="#playerDetails-modal" class="btn btn-primary">See profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Left handed batsman</p>
+                                <a href="modal" data-toggle="modal" data-target="#playerDetails-modal" class="btn btn-primary">See profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Left handed batsman</p>
+                                <a href="modal" data-toggle="modal" data-target="#playerDetails-modal" class="btn btn-primary">See profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div class="modal fade" id="playerDetails-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="top:auto">
+                <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+                    <!--Content-->
+                    <div class="modal-content">
+                        <!--Body-->
+                        <div class="modal-body text-center mb-1" style="padding: 5px;">
+                            <!-- <div class="card"> -->
+                            <img class="card-img-top" src="img/mobile_back.jpg" alt="Card image" style="width:100%;height: 210px;">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Left handed batsman</p>
+                                <p class="card-text">Season: 2019</p>
+                                <p class="card-text">Total Match: 120</p>
+                                <p class="card-text">Total Run: 4</p>
+                                <p class="card-text">Total Wicket: 4</p>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal -->
+        </section>
+    </div>
 </div>
-<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
-  <script>
-            // Enable pusher logging - don't include this in production
-            Pusher.logToConsole = true;
-
-            var pusher = new Pusher('41ac6612c4cdea6456be', {
-              cluster: 'ap2',
-              forceTLS: true,
-              encrypted: true,
-            });
-
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('App\\Events\\CommentEvent', function(data) {
-
-
-              var d1 = document.getElementById('comment_'+data.postId);
-              d1.insertAdjacentHTML("afterend", "<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'>"+data.comment+"</div></div></div></ul></div>");
-
-
-              // alert(JSON.stringify(data));
-              // document.getElementById('comment_'+data.postId.to).after("<div class='comments-container'><p>"+data.comment+"</p></div>");
-              // document.getElementById('comment_'+data.postId).append("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-              // document.getElementById('comment_'+data.postId).append(data.comment);
-              // document.getElementById('comment_notification').after("<div class='comments-container'><ul id='comments-list' class='comments-list'><li><div class='comment-main-level'><div class='comment-avatar'></div><div class='comment-box'><div class='comment-head'><h6 class='comment-name by-author'></h6></div><div class='comment-content'></div></div></div>"+data.comment+"</ul>");
-            });
-          </script>
-
-<!-- <script>
-            $(document).ready(function() {
-               <button class="Show">Show</button>
-<button class="Hide">Hide</button>
-<button class="toggle">Show &amp; Hide</button>
-<div id="target"></div> 
-            })
-            </script> -->
-
- 
-
-
-<!-- page script -->
-

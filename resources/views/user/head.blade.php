@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="/rzs-blog/css/left-sidebar.css">
 	<link rel="stylesheet" href="/rzs-blog/css/right-sidebar.css">
 	<link rel="stylesheet" href="/rzs-blog/css/body.css">
+	<link rel="stylesheet" href="/rzs-blog/css/cricket.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script type="text/javascript" src="/3rd-party/js/jquery-3.3.1.min.js"></script>
