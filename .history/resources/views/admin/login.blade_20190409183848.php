@@ -12,7 +12,7 @@
 				@csrf
 				<input type="hidden" name="status" value=1>
 				<div class="input-group custom input-group-lg">
-					<input type="text" class="form-control" placeholder="Phone No" name="phone">
+					<input type="text" class="form-control" placeholder="Username" name="name">
 					<div class="input-group-append custom">
 						<span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
 					</div>

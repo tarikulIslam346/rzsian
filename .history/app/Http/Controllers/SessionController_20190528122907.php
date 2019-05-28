@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 
 class SessionController extends Controller
 {      
@@ -32,29 +29,5 @@ class SessionController extends Controller
     {
         auth()->logout();
         return redirect('/');
-    }
-
-    public function redirectToFacebookProvider()
-    {
-        return Socialite::driver('facebook')->scopes([
-            "publish_actions, manage_pages", "publish_pages"])->redirect();
-    }
- 
-    public function handleProviderFacebookCallback()
-    {
-        $auth_user = Socialite::driver('facebook')->user();
- 
-        $user = User::updateOrCreate(
-            [
-                'email' => $auth_user->email
-            ],
-            [
-                'token' => $auth_user->token,
-                'name'  =>  $auth_user->name
-            ]
-        );
- 
-        Auth::login($user, true);
-        return redirect()->to('/'); // Redirect to a secure page
     }
 }

@@ -11,12 +11,8 @@ class PagesController extends Controller
 {
     //
     public function home(){
-        if(\Auth::check())
-    {
-        return redirect('/user');
+    	return view('home.index');
     }
-    else return view('home.index');
-}
     public function user_info(){
     	if(\Auth::check())
     	{
