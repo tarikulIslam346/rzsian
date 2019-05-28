@@ -11,10 +11,12 @@
 
 .cricket .match-info .new-design1{
     margin-right: 10%;
+    display: flex;
 }
 
 .cricket .match-info .new-design2{
     margin-left: 10%;
+    display: flex;
 }
 
 .match-info{
@@ -108,9 +110,14 @@
 .match-info > .team2 .name {
     position: relative;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 15px;
     /* width: 200px; */
     line-height: 32px;
+}
+
+.match-info > .team1 .name a,
+.match-info > .team2 .name a{
+    color: #fff;
 }
 
 .match-info > * {
@@ -214,6 +221,7 @@
     width: 25px;
     height: 30px;
     position: relative;
+    margin: 0 10px;
 }
 
 .match-info .win {
@@ -387,6 +395,27 @@
     color: #fff;
 }
 
+
+
 .team-Player .card{
-    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.team-Player .card-header{
+    background: #383759;
+    color: #fff;
+    font-weight: 600;
+}
+
+.team-main-logo{
+    text-align: center;
+    background: #000;
+    margin-top: 17px;
+    padding: 2px;
+}
+
+.team-main-logo img{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
 }
