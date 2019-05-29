@@ -9,7 +9,12 @@
 				<ul id="accordion-menu">
 					<li>
 						<a href="users-data-table.php" class="dropdown-toggle no-arrow">
-							<span class="fa fa-users"></span><span class="mtext">Users</span>
+							<span class="fa fa-users"></span><span class="mtext">Create Game</span>
+						</a>
+					</li>
+					<li>
+						<a href="users-data-table.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-users"></span><span class="mtext">Create Player</span>
 						</a>
 					</li>
 				</ul>
