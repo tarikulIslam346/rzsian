@@ -14,6 +14,8 @@ Route::get('{batch}','UserController@getBatchdata')->where(['batch' => '[0-9]+']
 Route::get('/single-page/{post}','PagesController@details');
 Route::get('/cricket-page','PagesController@cricket_page');
 Route::get('/team-page','PagesController@team_page');
+Route::get('/privacy-page','PagesController@privacy_page');
+
 
 
 Route::get('/login/facebook', 'SessionController@redirectToFacebookProvider');
