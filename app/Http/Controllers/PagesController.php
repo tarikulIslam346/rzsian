@@ -63,7 +63,7 @@ class PagesController extends Controller
     public function team_page(){
         if(\Auth::check())
     	{
-/*             $batch = User::select('batch')->distinct('batch')->get();
+/*          $batch = User::select('batch')->distinct('batch')->get();
             $post = Post::where('user_id',\Auth::id())->orderBy('created_at','desc')->get();
             $user_page = 1;
             $profile_page=1; */
@@ -71,5 +71,8 @@ class PagesController extends Controller
     	}else {
     		return view('home.index');
     	}
+    }
+    public function privacy_page(){
+        return view('home.privacy');
     }
 }

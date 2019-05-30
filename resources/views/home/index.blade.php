@@ -230,12 +230,12 @@
                      
                         </div>
                         <!--Footer-->
-                       <!--  <div class="modal-footer">
+                        <div class="modal-footer">
                             <div class="options text-right">
-                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                                <p class="pt-1">Already have an account? <a href="/public/privacy-page" class="blue-text">Privacy Policy</a></p>
                             </div>
                             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
-                        </div> -->
+                        </div>
                        
                     </div>
                     <!--/.Panel 8-->

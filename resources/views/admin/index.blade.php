@@ -106,7 +106,48 @@
 					</div>
 				</div>
 			</div>
+
+<!-- Create game -->
+
 			<div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+				<h4 class="mb-30">Team Create</h4>
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+				<h4 class="mb-30">Player Create</h4>
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+				<h4 class="mb-30">Coach Create</h4>
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+				<h4 class="mb-30">Manager Create</h4>
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+			</div>
+
+<!-- Create game -->
+
+			<!-- <div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
 				<h4 class="mb-30">Area Spline Chart</h4>
 				<div class="row">
 					<div class="col-sm-12 col-md-8 col-lg-9 xs-mb-20">
@@ -140,8 +181,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row clearfix">
+			</div> -->
+			<!-- <div class="row clearfix">
 				<div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 mb-30">
 					<div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
 						<h4 class="mb-30">Devices Managed</h4>
@@ -246,8 +287,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row clearfix">
+			</div> -->
+			<!-- <div class="row clearfix">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-30">
 					<div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
 						<h4 class="mb-20">Recent Messages</h4>
@@ -446,7 +487,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		 @include('admin.footer')
 		</div>
 	</div>
