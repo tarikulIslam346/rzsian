@@ -18,7 +18,7 @@ class CreateManagersTable extends Migration
             $table->string('manager_name');
             $table->integer('age');
             $table->date('dob');
-            $table->string('manage_image');
+            $table->string('manager_image');
             $table->timestamps();
         });
     }

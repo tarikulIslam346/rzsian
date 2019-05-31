@@ -23,7 +23,7 @@ class PagesController extends Controller
             $batch = User::select('batch')->distinct('batch')->get();
             $post = Post::orderBy('created_at','desc')->get();
             $user_page = 1;
-    		return view('user.index',compact('batch','post','comments','user_page'));
+    		return view('user.index',compact('batch','post','user_page'));
     	}else {
     		return view('home.index');
     	}

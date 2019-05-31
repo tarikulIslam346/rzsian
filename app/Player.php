@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     protected $fillable =[
-        'player_name','age','dob','team_id','total_run','total_wicket','player_image'
+        'player_name','age','dob','team_id','total_run','total_wicket','total_match','player_image','position',
     ];
 
     public  function store(){
@@ -16,9 +16,12 @@ class Player extends Model
             'age'=>request('age'),
             'dob'=>request('dob'),
             'team_id'=>request('team_id'),
+            'position'=>request('position'),
             'total_run'=>request('total_run'),
             'total_wicket'=>request('total_wicket'),
-            'payer_image'=>request('payer_image')
+            'total_match'=>request('total_match'),
+            'player_image'=>request('player_image')
+            
         ]);
     }
 

@@ -12,7 +12,7 @@ class RegistrationController extends Controller
             'name' => 'required',
             'email' => 'email|unique:users',
             'password' => 'required|confirmed|unique:users',
-            'phone' => 'required|confirmed|unique:users',
+            'phone' => 'required|unique:users',
             'profile_pic' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
         $profile_pic ='';
@@ -32,7 +32,8 @@ class RegistrationController extends Controller
             'blood' => request('blood'),
             'status' => request('status'),
             'profile_pic' => $profile_pic,
-            'password' => bcrypt(request('password'))
+            'password' => bcrypt(request('password')),
+            'type' => 0,
         ]);
         if (auth()->attempt(request(['phone','password'])) && request('status') == 0){
             //$id = auth()->id();

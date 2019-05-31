@@ -7,6 +7,7 @@ use App\Fixture_detail;
 use App\Team;
 use App\Team_image;
 use Illuminate\Http\Request;
+use Validator;
 
 class TeamController extends Controller
 {
@@ -57,7 +58,7 @@ class TeamController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'successfully created']);
+        return redirect('/admin');
 
     }
 
@@ -131,7 +132,7 @@ class TeamController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'Updated successfully']);
+        return redirect('/admin');
     }
 
     public function getTeamInfo($team_id){

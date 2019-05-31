@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Manager;
 use Illuminate\Http\Request;
-
+use Validator;
 
 class ManagerController extends Controller
 {
@@ -33,7 +33,7 @@ class ManagerController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'successfully created']);
+        return redirect('/admin');
 
     }
 

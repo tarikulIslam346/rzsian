@@ -18,10 +18,12 @@ class CreatePlayersTable extends Migration
             $table->string('player_name');
             $table->integer('age');
             $table->date('dob');
+            $table->string('position');
             $table->integer('team_id');
             $table->integer('total_run');
             $table->integer('total_wicket');
-            $table->string('payer_image');
+            $table->integer('total_match');
+            $table->string('player_image');
             $table->timestamps();
         });
     }

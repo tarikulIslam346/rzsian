@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Coach;
 use Illuminate\Http\Request;
+use Validator;
 
 
 class CoachController extends Controller
@@ -33,7 +34,7 @@ class CoachController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'successfully created']);
+        return redirect('/admin');
 
     }
 

@@ -46,7 +46,7 @@ Route::get('coach/get_coaches', 'CoachController@getCoaches');
 Route::post('coach/edit','CoachController@CoachEdit');
 
 //team
-Route::post('team/create','TeamController@CoachCreate');
+Route::post('team/create','TeamController@TeamCreate');
 Route::get('team/get_team/{team_id}', 'TeamController@getTeamInfo');
 Route::get('team/team_details/{team_id}', 'TeamController@getTeamDetails');
 Route::get('team/get_teams', 'TeamController@getTeams');

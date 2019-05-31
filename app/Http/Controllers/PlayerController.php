@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Validator;
 
 class PlayerController extends Controller
 {
@@ -33,7 +34,7 @@ class PlayerController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'successfully created']);
+        return redirect('/admin');
 
     }
 
@@ -47,17 +48,21 @@ class PlayerController extends Controller
         }
         $player_name = request('player_name');
         $age = request('age');
+        $position = request('position');
         $dob = request('dob');
         $team_id = request('team_id');
         $total_run = request('total_run');
         $total_wicket = request('total_wicket');
-
+        $total_match = request('total_match');
         $update_array = array();
         if (!is_null($player_name)) {
             $update_array['player_name'] = $player_name;
         }
         if (!is_null($age)) {
             $update_array['age'] = $age;
+        }
+        if (!is_null($position)) {
+            $update_array['position'] = $position;
         }
         if (!is_null($dob)) {
             $update_array['dob'] = $dob;
@@ -71,6 +76,10 @@ class PlayerController extends Controller
         if (!is_null($total_wicket)) {
             $update_array['total_wicket'] = $total_wicket;
         }
+        if (!is_null($total_match)) {
+            $update_array['total_match'] = $total_match;
+        }
+        
         
         $player = new Player();
         $player->edit($update_array);
@@ -88,7 +97,7 @@ class PlayerController extends Controller
             }
 
         }
-        return response()->json(['success'=>true , 'message' => 'Updated successfully']);
+        return redirect('/admin');
     }
 
     public function getPlayerInfo($player_id){
