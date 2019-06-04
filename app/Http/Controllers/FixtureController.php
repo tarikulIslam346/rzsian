@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Fixture;
 use App\Fixture_detail;
 use Illuminate\Http\Request;
+use Validator;
 
 class FixtureController extends Controller
 {
@@ -28,14 +29,14 @@ class FixtureController extends Controller
             }*/
             for($i = 0 ; $i<count($team_ids) ; $i++){
                 $fixture_details = new Fixture_detail();
-                $fixture_details->fixtureId =  $fixtureId->fixture_id;
+                $fixture_details->fixture_id  =  $fixtureId->fixture_id;
                 $fixture_details->team_id =  $team_ids[$i];
                 $fixture_details->win_status =  0;
                 $fixture_details->save();
             }
         }
         
-        return response()->json(['success'=>true , 'message' => 'successfully created']);
+        return redirect('/admin');
 
     }
 
@@ -140,14 +141,5 @@ class FixtureController extends Controller
         return response()->json($Fixture_info);
     }
 
-    public function getFixtures(){
-        $fixtures = Fixture::select('fixtures.*','t1.team_name as team1','t2.team_name as team2','fd1.score as team1_score','fd2.score as team2_score')
-            ->join('teams as t1','t1.team_id','=','fixtures.team1')
-            ->join('teams as t2','t2.team_id','=','fixtures.team2')
-            ->join('fixture_details as fd1','fd1.team_id','=','fixtures.team1')
-            ->join('fixture_details as fd2','fd2.team_id','=','fixtures.team2')
-            ->get();
-        return response()->json($fixtures);
-    }
 
 }

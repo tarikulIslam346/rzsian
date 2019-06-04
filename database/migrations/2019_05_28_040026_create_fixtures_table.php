@@ -16,12 +16,12 @@ class CreateFixturesTable extends Migration
         Schema::create('fixtures', function (Blueprint $table) {
             $table->increments('fixture_id');
             $table->date('match_date');
-            $table->time('match_time');
+            $table->string('match_time');
             $table->integer('match_status');
             $table->integer('team1');
             $table->integer('team2');
-            $table->integer('winner');
-            $table->integer('man_of_the_match');
+            $table->integer('winner')->nullable();
+            $table->integer('man_of_the_match')->nullable();
             $table->timestamps();
         });
     }

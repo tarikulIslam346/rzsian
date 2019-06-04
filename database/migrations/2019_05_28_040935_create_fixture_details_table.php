@@ -17,8 +17,8 @@ class CreateFixtureDetailsTable extends Migration
             $table->increments('fix_detail_id');
             $table->integer('fixture_id');
             $table->integer('team_id');
-            $table->string('score');
-            $table->integer('win_status');
+            $table->string('score')->nullable();
+            $table->integer('win_status')->nullable();
             $table->timestamps();
         });
     }

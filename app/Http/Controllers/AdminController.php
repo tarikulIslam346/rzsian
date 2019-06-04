@@ -8,6 +8,8 @@ use App\Manager;
 use App\Coach;
 use App\Team;
 use App\Player;
+use App\Fixture;
+use App\Fixture_detail;
 
 class AdminController extends Controller
 {
@@ -19,7 +21,8 @@ class AdminController extends Controller
         $coaches = Coach::all();
         $teams = Team::all();
         $players = Player::all();
-    	return view('admin.index',compact('mangers','coaches','teams','players'));
+        $fixtures = Fixture::getFixtures();
+    	return view('admin.index',compact('mangers','coaches','teams','players','fixtures'));
     }
     public function create(){
     	return view('admin.login');
